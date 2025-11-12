@@ -1,0 +1,100 @@
+[aws]
+symbol = "  "
+
+[battery]
+full_symbol = ""
+charging_symbol = ""
+discharging_symbol = ""
+
+[[battery.display]]  # "bold red" style when capacity is between 0% and 10%
+threshold = 10
+style = "bold red"
+
+[[battery.display]]  # "bold yellow" style when capacity is between 10% and 30%
+threshold = 30
+style = "bold yellow"
+
+[conda]
+symbol = " "
+disabled = true
+
+[docker_context]
+symbol = " "
+only_with_files = true
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+# [haskell]
+# symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+style = "bold dimmed green"
+threshold = 75
+disabled = false
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+[php]
+symbol = " "
+
+[python]
+symbol = " "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[custom.racket]
+description = "Racket"
+symbol = "𝝺 "
+style = "bold blue"
+extensions = ["rkt", "scrbl"]
+command = """racket --version | cut -d "v" -f 2 | cut -d " " -f 1"""
+format = "via [$symbol($output )]($style) "
+
+[custom.os-macos]
+description = "MacOS Version"
+symbol = " "
+command = "/usr/bin/sw_vers -productVersion"
+when = """ test `uname -s` = "Darwin" """
+
+[custom.os-linux]
+symbol = " "
+when = """ test `uname -s` = "Linux" """
+
+[custom.os-windows]
+symbol = " "
+when = """ test `uname -s` = "Windows" """
+

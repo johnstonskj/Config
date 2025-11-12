@@ -1,0 +1,6 @@
+# -*- mode: sh; eval: (sh-set-shell "zsh") -*-
+
+if command -v gpg >/dev/null 2>&1; then
+    export GNUPGHOME="${XDG_DATA_HOME:-$HOME/.local/share}/gnupg"
+    export GPG_TTY=$(tty)
+fi

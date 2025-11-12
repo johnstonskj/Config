@@ -1,0 +1,9 @@
+# -*- mode: sh; eval: (sh-set-shell "zsh") -*-
+
+LLVM_PREFIX="${HOMEBREW_PREFIX}/opt/llvm"
+
+if [[ -d "${LLVM_PREFIX}" ]]; then
+    export PATH="${LLVM_PREFIX}/bin:$PATH"
+    export LDFLAGS="-L${LLVM_PREFIX}/lib -L${LLVM_PREFIX}/lib/c++ -Wl,-rpath,${LLVM_PREFIX}/lib/c++"
+    export CPPFLAGS="-I${LLVM_PREFIX}/include"
+fi

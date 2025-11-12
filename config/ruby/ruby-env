@@ -1,0 +1,9 @@
+# -*- mode: sh; eval: (sh-set-shell "zsh") -*-
+
+RUBY_PREFIX="${HOMEBREW_PREFIX}/opt/ruby"
+if [[ -d "${RUBY_PREFIX}" ]]; then
+    export PATH="${RUBY_PREFIX}/bin:$PATH"
+    export LDFLAGS="-L${RUBY_PREFIX}/lib $LDFLAGS"
+    export CPPFLAGS="-I${RUBY_PREFIX}/include $CPPFLAGS"
+    export PKG_CONFIG_PATH="${RUBY_PREFIX}/lib/pkgconfig"
+fi

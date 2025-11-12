@@ -1,0 +1,4 @@
+# -*- mode: sh; eval: (sh-set-shell "zsh") -*-
+
+alias cat=bat
+alias battail='bat --paging=never -l log'

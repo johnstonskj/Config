@@ -1,0 +1,7 @@
+# -*- mode: sh-mode; -*-
+
+if command -v less >/dev/null 2>&1; then
+    export LESSHISTFILE="$HOME/.local/var/run/less_history"
+fi
+
+

@@ -1,0 +1,8 @@
+# -*- mode: sh; eval: (sh-set-shell "zsh") -*-
+
+if command -v guile >/dev/null 2>&1; then
+    GUILE_PREFIX=$(dirname $(dirname $(readlink -f $(command -v guile))))
+    export GUILE_LOAD_PATH="${GUILE_PREFIX}/share/guile/site/3.0"
+    export GUILE_LOAD_COMPILED_PATH="${GUILE_PREFIX}/lib/guile/3.0/site-ccache"
+    export GUILE_SYSTEM_EXTENSIONS_PATH="${GUILE_PREFIX}/lib/guile/3.0/extensions"
+fi

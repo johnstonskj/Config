@@ -1,0 +1,5 @@
+# -*- mode: sh-mode; -*-
+
+if command -v openssl >/dev/null 2>&1; then
+    export SSH_KEY_PATH="~/.ssh/rsa_id"
+fi

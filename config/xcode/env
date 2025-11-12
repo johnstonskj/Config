@@ -1,0 +1,5 @@
+# -*- mode: sh; eval: (sh-set-shell "zsh") -*-
+
+if [[ ${OSTYPE} == darwin* ]] ; then
+    export PATH="${PATH}:$(xcode-select -p)"
+fi

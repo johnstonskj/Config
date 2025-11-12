@@ -1,0 +1,7 @@
+# -*- mode: sh; eval: (sh-set-shell "zsh") -*-
+
+GETOPT_BIN="${HOMEBREW_PREFIX}/opt/gnu-getopt/bin"
+
+if [[ -f "${GETOPT_BIN}/getopt" ]]; then
+    export PATH="${GETOPT_BIN}:$PATH"
+fi

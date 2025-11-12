@@ -1,0 +1,12 @@
+# -*- mode: sh; eval: (sh-set-shell "zsh") -*-
+
+export RVM_HOME="$HOME/.rvm"
+
+if [[ -d "${RVM_HOME}" ]]; then
+    export PATH="${RVM_HOME}/bin"
+    
+    if [[ -s "${RVM_HOME}/scripts/rvm" ]] ; then
+        # Load RVM into a shell session *as a function*
+        source "${RVM_HOME}/scripts/rvm" 
+    fi
+fi

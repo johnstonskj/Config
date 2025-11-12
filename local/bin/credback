@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+ARCHIVE=credback-$(date "+%Y%m%d-%H%M%S").zip
+
+zip -r $ARCHIVE \
+    $HOME/.gnupg \
+    $HOME/.ssh \
+    $HOME/.cargo/credentials \
+    $HOME/.config/emacs/secrets.el.gpg
+
+gpg -se -r "Simon Johnston" -o $ARCHIVE.gpg $ARCHIVE
+rm $ARCHIVE
