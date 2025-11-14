@@ -1,1 +1,3 @@
+# -*- mode: sh; eval: (sh-set-shell "zsh") -*-
+
 alias vi='vim'

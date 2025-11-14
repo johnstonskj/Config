@@ -107,12 +107,14 @@ autoload -Uz compinit && compinit
 log_scope_exit "package-completions"
 
 ############################################################################
-# Starship prompt
+# Starship prompt, mcFly history
 ############################################################################
 
 log_scope_enter "prompt"
 
 eval "$(starship init zsh)"
+
+eval "$(mcfly init zsh)"
 
 log_scope_exit "prompt"
 
@@ -126,5 +128,7 @@ fi
 
 log_scope_exit "zshrc"
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+# Add RVM to PATH for scripting. Make sure this is the (almost) last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+export PATH="/opt/homebrew/bin:$PATH"

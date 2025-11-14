@@ -1,4 +1,4 @@
-# -*- mode: sh-mode; -*-
+# -*- mode: sh; eval: (sh-set-shell "zsh") -*-
 
 if command -v openssl >/dev/null 2>&1; then
     export SSH_KEY_PATH="~/.ssh/rsa_id"
