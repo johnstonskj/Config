@@ -233,6 +233,37 @@ cask 'popclip'
 cask 'soundsource'
 
 # ---------------------------------------------------------------------------------------------------------------------
+# Layer 02 => System Integration ❱ Containers
+# ---------------------------------------------------------------------------------------------------------------------
+
+# ContaiNERD CTL - Docker-compatible CLI for containerd
+brew 'neonctl'
+
+# Linux virtual machinesfi
+brew 'lima'
+
+# Container runtimes on MacOS (and Linux) with minimal setup
+brew 'colima'
+
+# Additional guest agents for Lima
+brew 'lima-additional-guestagents'
+
+# Open source container development tool (AWS)
+cask 'finch'
+
+# Generic machine emulator and virtualizer
+cask 'qemu'
+
+# Rancher Desktop - Container Management and Kubernetes on the Desktop
+cask 'rancher'
+
+# OrbStack - Replacement for Docker Desktop
+cask 'orbstack'
+
+# Oracle VirtualBox
+cask 'virtualbox'
+
+# ---------------------------------------------------------------------------------------------------------------------
 # Layer 02 => System Integration ❱ Fonts
 # ---------------------------------------------------------------------------------------------------------------------
 

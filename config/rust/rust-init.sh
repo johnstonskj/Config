@@ -17,6 +17,7 @@ declare -a COMMANDS=(
 	cargo-watch
 	nu
 	nu-lint
+	release-plz
 )
 
 for toolchain in "${TOOLCHAINS[@]}"; do
