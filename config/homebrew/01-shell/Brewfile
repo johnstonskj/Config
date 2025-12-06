@@ -1,0 +1,139 @@
+
+## ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+## ║ Layer 01 ❱ Basic Shell Environment
+## ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+brew 'bash'                             # Bash is the Bourne Again Shell. Bash is an sh-compatible shell
+brew 'bash-completion'                  # Programmable completion functions for bash
+
+brew 'zsh'                              # Zsh is a shell designed for interactive use
+brew 'zsh-syntax-highlighting'          # A plugin for zsh to make your command line life much easier
+brew 'zsh-autosuggestions'              # Another really helpful zsh plugin
+
+brew 'gnu-getopt'                       # For better argument parsing in shell scripts
+
+brew 'starship'                         # Cross-shell prompt
+
+cask 'kitty'                            # GPU-based terminal emulator
+
+brew 'tmux'                             # Terminal multiplexer
+brew 'tmuxinator'                       # Manage complex tmux sessions easily
+
+# ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+# │ Layer 01 ❱ Basic Shell Environment ❱ GNU Utilities
+# └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+brew 'coreutils'                        # Basic file, shell and text manipulation utilities of the GNU operating system
+brew 'binutils'
+brew 'diffutils'
+brew 'ed'
+brew 'findutils'
+brew 'gawk'
+brew 'gnu-indent'
+brew 'gnu-sed'
+brew 'gnu-tar'
+brew 'gnu-which'
+brew 'gnutls'
+brew 'gzip'
+brew 'inetutils'
+brew 'watch'
+brew 'wdiff'
+
+# Core GNU programming tools
+brew 'gdb'                              # gdb requires further actions to make it work. See `brew info gdb`.
+brew 'gpatch'
+brew 'm4'
+brew 'make'                             # GNU make
+brew 'automake'
+
+# ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+# │ Layer 01 ❱ Basic Shell Environment ❱ Better Utilities
+# └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+brew 'bat'                              # bat is like `cat` plus line numbers, syntax highlighting, and more
+brew 'bottom'                           # Yet another cross-platform graphical process/system monitor
+brew 'curl', link: true                 # curl is a command line tool for transferring data with URL syntax
+brew 'dust'                             # More intuitive version of du in rust
+brew 'eva'                              # Calculator REPL similar to bc(1)
+brew 'eza'                              # Modern, maintained replacement for ls
+brew 'fd'                               # fd: a simple, fast and user-friendly alternative to find
+brew 'fselect'                          # Find files with SQL-like queries
+brew 'gnuplot'                          # Gnuplot is a portable command-line driven graphing utility
+brew 'graphicsmagick'                   # GraphicsMagick is the swiss army knife of image processing
+brew 'graphviz'
+brew 'imagemagick'
+brew 'jaq'                              # JQ clone focussed on correctness, speed, and simplicity
+brew 'jnv'                              # Interactive JSON filter using jq
+brew 'less'                             # less is like `more` plus has more capability
+brew 'mcfly'                            # Fly through your shell history
+brew 'ripgrep'                          # ripgrep is text search; we prefer it over grep, ag, git grep, ucg, pt, sift
+brew 'rsync'                            # rsync is the classic unix file synchronizer
+brew 'sd'                               # Intuitive find & replace CLI
+cask 'tad'                              # Tad is CSV viewer with features for pivot, search, etc.
+brew 'unison'                           # Unison is a high-level file synchronization utility.
+brew 'vtk'                              # Visualization Toolkit for manipulating and displaying scientific data
+brew 'wget'                             # Wget is a free software package for retrieving files using HTTP and FTP
+brew 'yq'                               # yq is a lightweight and flexible command-line YAML processor
+brew 'zoxide'                           # The `z` command to `cd` among directories
+brew 'zstd'                             # Zstandard is the best modern compression
+
+# ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+# │ Layer 01 ❱ Basic Shell Environment ❱ Security-Related
+# └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+brew 'bcrypt'                           # bcrypt is high quality encryption that is very popular
+brew 'scrypt'                           # scrypt is high quality encryption
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ OpenSSL ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
+brew 'openssl'                          # OpenSSL is an open-source implementation of the SSL and TLS protocols
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ OpenSSH ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
+brew 'openssh'                          # OpenBSD freely-licensed SSH connectivity tools
+cask 'ssh-config-editor', adopt: true   # Tool for managing the OpenSSH ssh client configuration file
+brew 'lazyssh'                          # Terminal-based SSH manager
+brew 'ssh-audit'                        # SSH server & client auditing
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ GnuPG ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
+brew 'gpg'                              # GNU Privacy Guard (GnuPG) provides encryption as a free replacement for PGP
+brew 'pinentry-mac'                     # Pinentry for GPG on Mac
+brew 'gpg-tui'                          # Manage your GnuPG keys with ease!
+cask 'gpgfrontend'                      # OpenPGP/GnuPG crypto, sign and key management tool
+cask 'gpg-suite'                        # Tools to protect your emails and files
+# cask 'gpg-suite-pinentry'             # GPG Suite Pinentry
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Pass ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
+brew 'pass'                             # Pass, a Unix password manager for the command line
+brew 'pass-git-helper'                  # Git credential helper interfacing with pass
+brew 'pass-otp'                         # Pass extension for managing one-time-password tokens
+
+# https://veracrypt.io/en/Home.html
+# https://lostinict.wordpress.com/2015/09/27/mactomb-enhance-your-privacy-on-mac-os-x/
+
+# ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+# │ Layer 01 ❱ Basic Shell Environment ❱ Editors
+# └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+brew 'nano'                             # Free (GNU) replacement for the Pico text editor
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Emacs !! ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
+tap 'd12frosted/emacs-plus'             # Emacs editor with extra features; recommended by Spacemacs and Doom emacs
+brew 'emacs-plus@30'
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Vi :( ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
+cask 'macvim-app'                       # GUI for vim, made for macOS
+brew 'neovim'                           # Ambitious Vim-fork focused on extensibility and agility
+
+# ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+# │ Layer 01 ❱ Basic Shell Environment ❱ Text Processing
+# └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+brew 'pandoc', link: true               # Pandoc document convert
+
+brew 'aspell'                           # Spell checker with better logic than ispell
+brew 'proselint'                        # Linter for prose

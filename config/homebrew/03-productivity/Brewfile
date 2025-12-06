@@ -1,0 +1,93 @@
+
+## ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+## ║ Layer 03 ❱ Productivity
+## ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+# ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+# │ Layer 03 ❱ Productivity ❱ Widgets, Menubar, & Utilities
+# └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+mas  'Lockera Widgets', id: 6466819847
+
+mas  'Meeting Reminder In Your Face', 
+     id: 1476964367
+mas  'Plock • Pop-up Clock', 
+     id: 1642528649
+mas  'FileUtils', id: 6477607708
+mas  'iStatistica Pro', id: 1447778660
+mas  'New Terminal Here', id: 1067646949
+mas  'Webcam Settings', id: 533696630
+
+mas  'Pieoneer', id: 6739781207         # Fancy context-sensitive pie menus 
+
+# mas 'QR Clipboard', id: 869183896     # <= maybe?
+
+mas  'Cicero: A Unicode® Tool', 
+     id: 1480977453
+mas  'Ultra Character Map', 
+     id: 520265986
+
+# ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+# │ Layer 03 ❱ Productivity ❱ Browsers, Messaging, & Social
+# └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 
+cask 'google-chrome'
+# cask 'firefox'
+# cask 'brave-browser'
+
+cask 'messenger'
+cask 'signal'
+cask 'slack', adopt: true
+cask 'whatsapp'
+cask 'zoom', adopt: true
+
+# ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+# │ Layer 03 ❱ Productivity ❱ Additional Security/Privacy
+# └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+# no installer for Proton Authenticator?
+
+cask 'proton-pass', adopt: true
+mas  'Proton Pass for Safari', 
+     id: 6502835663
+
+cask 'protonvpn', adopt: true
+
+# ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+# │ Layer 03 ❱ Productivity ❱ Office-Like
+# └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Adobe ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
+cask 'adobe-creative-cloud'             # Client to install Adobe apps
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Google ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
+cask 'google-drive'                     # Google Drive client for Mac
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Microsoft ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
+cask 'microsoft-office'                 # Office is a large suite of software for documents, spreadsheets, diagrams
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Proton ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
+cask 'proton-drive', adopt: true        # Proton suite of privacy-focused apps
+cask 'proton-mail', adopt: true
+cask 'standard-notes', adopt: true
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Other ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
+cask 'pdf-expert', adopt: true          # PDF reader, editor and annotator
+
+cask 'macdown'                          # MacDown simple markdown editor
+
+cask 'mactex'                           # MacTex: LaTeX document preparation system with high-quality typesetting.
+cask 'texifier'                         # Damn fine LaTeX editor
+
+cask 'zotero@beta'                      # Collect, organize, cite, and share research sources
+
+cask 'omnigraffle', adopt: true         # Diagramming
+
+mas  'MathStudio', id: 829912893        # Simple CAS for Mac
+
+cask 'claude', adopt: true              # Anthropic's official Claude AI desktop app

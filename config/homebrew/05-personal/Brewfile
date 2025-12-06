@@ -1,0 +1,112 @@
+
+## ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+## ║ Layer 05 ❱ Personal Apps
+## ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+# ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+# │ Layer 05 ❱ Personal Apps ❱ Making Music
+# └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ MIDI Tools ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
+cask 'midikeys'
+mas  'MIDI Connect', id: 6476070288
+mas  'QuickMIDI', id: 1459790045
+mas  'Widi Plus', id: 1115231926
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ DAW ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
+cask 'bitwig-studio'
+mas  'GarageBand', id: 682658836
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Instruments ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
+cask 'native-access'
+cask 'arturia-software-center'
+
+mas  'Audulus 4', id: 1592022030
+mas  'Animoog Z Synthesizer', id: 1586841361
+mas  'Minimoog Model D Synthesizer', id: 1339418001
+mas  'Model 15 Modular Synthesizer', id: 1041465860
+
+# cask 'supercollider'
+# cask 'cycling74-max'
+
+# ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+# │ Layer 05 ❱ Personal Apps ❱ Amateur Radio
+# └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+mas  'SDR Control for Icom', id: 1592313285
+mas  'QTH.app', id: 6740310746
+
+# cask 'chirp'                          # Tool for programming amateur radio (DISABLED -- https://chirpmyradio.com/projects/chirp/wiki/Home)
+
+# Ham radio digital modem application
+cask 'fldigi'
+
+# Ham radio rig control
+cask 'flrig'
+
+# No installer for WSJT-X
+# https://wsjt.sourceforge.io/wsjtx.html
+
+cask 'gridtracker2'                     # Warehouse of amateur radio information presented in an easy to use interface
+                                        # '-> GridTracker listens to traffic from WSJT-X and displays it on a map.
+# mas  'Rotor', id: 1559024873
+# cask gqrx
+
+# No installer for MacDoppler (satellite tracker)
+# https://www.dogparksoftware.com/MacDoppler.html
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Logging ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
+# mas  'World Radio League',            # <= iPad app
+#.     id: 6502666646
+
+mas  'RUMlogNG', id: 964454561
+
+cask 'tqsl'                             # Sign and upload QSO records to Logbook of The World (LoTW)
+
+# The following has an SHA mismatch error!
+# cask 'hamrs-pro', adopt: true           # A simple, portable logger tailored for activities like PoTA, Field Day, ...
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Offline Tools ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
+mas 'Morse: Code training to CW guru', id: 923315129
+
+# mas  'HAM-Toolbox', id: 1630108109
+
+# No installer for MatchMaker (optimum match for your antenna and radio)
+# https://www.blackcatsystems.com/software/matchmaker-rf-impedance-matching-software.html
+
+# No installer for DX Toolbox
+# https://www.blackcatsystems.com/software/ham-shortwave-radio-propagation-software.html
+
+# No installer for RF Toolbox
+# https://www.blackcatsystems.com/software/electronics-antenna-design-software.html
+
+# No installer for MININEC (antenna modeling)
+# https://www.blackcatsystems.com/software/mininec-antenna-analysis-modeling-software.html
+
+# ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+# │ Layer 05 ❱ Personal Apps  ❱ Other
+# └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+mas 'Copilot: Track & Budget Money',    # Track money & budgets
+    id: 1447330651
+
+# mas 'Parcel - Delivery Tracking', id: 375589283
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Music Listening ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
+mas 'Portal - Escape Into Nature', id: 1436994560
+mas 'Endel: Focus & Sleep Sounds', id: 1346247457
+
+mas 'Silicio Mini Player + Widgets', id: 933627574
+
+# mas 'Linn', id: 1292218680            # <= iPad app and no longer compatible?
+mas 'Linn Kazoo', id: 848937349
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Diving ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
+mas 'DiveLogDT', id: 411603212          # The best dive logger

@@ -1,0 +1,41 @@
+
+## ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+## ║ Layer 02 ❱ System Integration
+## ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+cask 'arq'                              # Multi-cloud backup application
+
+cask 'console'                          # A better console tool
+
+# ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+# │ Layer 02 ❱ System Integration ❱ Containers
+# └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+brew 'neonctl'                          # ContaiNERD CTL - Docker-compatible CLI for containerd
+brew 'lima'                             # Linux virtual machines CLI
+brew 'colima'                           # Container runtimes on MacOS (and Linux) with minimal setup
+brew 'lima-additional-guestagents'      # Additional guest agents for Lima
+cask 'finch'                            # Open source container development tool (AWS)
+
+brew 'qemu'                             # Generic machine emulator and virtualizer
+cask 'rancher'                          # Rancher Desktop - Container Management and Kubernetes on the Desktop
+cask 'orbstack'                         # OrbStack - Replacement for Docker Desktop
+cask 'virtualbox'                       # Oracle VirtualBox
+
+# ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+# │ Layer 02 ❱ System Integration ❱ Fonts
+# └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+cask 'font-fira-code'
+cask 'font-fira-code-nerd-font'
+cask 'font-fira-mono'
+cask 'font-fira-mono-nerd-font'
+cask 'font-fira-mono-for-powerline'
+cask 'font-fira-sans'
+cask 'font-fira-sans-condensed'
+cask 'font-fira-sans-extra-condensed'
+cask 'font-hack'
+cask 'font-inconsolata'
+cask 'font-meslo-lg'
+cask 'font-meslo-lg-nerd-font'
+cask 'font-linux-libertine'

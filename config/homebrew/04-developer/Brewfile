@@ -1,0 +1,215 @@
+
+## ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+## ║ Layer 04 ❱ Development Tools
+## ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+# Package/environment managers
+brew 'direnv'                           # Load/unload env-vars based on $PWD
+brew 'mise'                             # Polyglot runtime manager
+
+brew 'dotenv-linter'                    # Lightning-fast linter for .env files written in Rust
+
+
+# Build coördination tools
+brew 'cmake'                            # Cross-platform make
+brew 'cmake-lint'
+brew 'just'
+
+# Diff/merge tools
+brew 'diff-so-fancy'
+brew 'difftastic'
+
+brew 'git'                              # Git is a free and open source distributed version control system
+brew 'git-crypt'
+brew 'git-delta'                        # Set as pager
+brew 'git-extras'
+brew 'git-lfs'
+brew 'git-machete'
+brew 'git-cliff'
+brew 'commitlint'
+brew 'multi-git-status'
+brew 'gitlint'
+brew 'gitwatch'
+brew 'fswatch'
+brew 'tig'
+cask 'gitkraken-cli'
+cask 'gitfinder'
+cask 'gitbutler'
+
+brew 'gh'                               # Github command-line interface
+brew 'github-mcp-server'
+
+brew 'mdbook'                           # Create online books from Markdown
+brew 'plantuml'                         # Draw UML diagrams from text
+
+brew 'tokei'                            # Source code line counter
+
+cask 'xquartz'                          # Xquartz X.Org X Window System that runs on OS X
+
+# ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+# │ Layer 04 ❱ Development Tools ❱ Testing
+# ---------------------------------------------------------------------------------------------------------------------
+
+brew 'atac'                             # Simple API client (Postman-like) in your terminal
+brew 'hyperfine'                        # Command-line benchmarking tool
+
+# cask 'charles'                        # Enables a developer to view HTTP traffic
+# cask 'insomnia'                       # REST client for API testing
+# cask 'postman'                        # A complete API Development Environment
+
+# ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+# │ Layer 04 ❱ Development Tools ❱ Programming Languages
+# ---------------------------------------------------------------------------------------------------------------------
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ C/C++/Infrastructure ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
+brew 'gcc'                              # GCC GNU Compiler Collection
+brew 'llvm'                             # LLVM compiler
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ JavaScript/TypeScript/Json ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
+brew 'jsonlint'
+brew 'node'                             # Node.js is a JavaScript platform for building fast, scalable network app.
+brew 'nvm'
+brew 'v8'                               # V8 JavaScript Engine
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Lisp-Like ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
+brew 'clisp'                            # GNU CLISP, a Common Lisp implementation
+
+brew 'guile'                            # GNU Ubiquitous Intelligent Language for Extensions
+brew 'guile-fibers'
+brew 'guile-gnutls'
+
+cask 'racket'                           # Modern programming language in the Lisp/Scheme family
+
+mas 'LispPad', id: 1258939760           # Another Mac-specific Scheme
+
+brew 'chezscheme'
+# brew 'chibi-scheme'
+# brew 'gambit-scheme'
+# brew 'gerbil-scheme'
+# brew 'mit-scheme'
+# brew 'sagittarius-scheme'
+# brew 'scheme48'
+# brew 'sisc-scheme'
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Pythonic ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
+brew 'python3'                          # Python programming language, esp. for systems scripting.
+brew 'pylint'
+brew 'uv'
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Rusty ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
+brew 'rustup'                           # Toolchain/environment management
+
+brew 'rust-analyzer'                    # LSP server for Rust
+
+# Cargo commands
+brew 'cargo-audit'
+brew 'cargo-binstall'
+brew 'cargo-cache'
+brew 'cargo-depgraph'
+brew 'cargo-deny'
+brew 'cargo-edit'
+brew 'cargo-expand'
+brew 'cargo-flamegraph'
+brew 'cargo-generate'
+brew 'cargo-nextest'
+brew 'cargo-outdated'
+brew 'cargo-shear'
+brew 'cargo-udeps'
+brew 'cargo-update'
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ OCaml ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
+brew 'ocaml'                            # OCaml: General purpose programming language in the ML family
+brew 'ocaml-findlib'
+brew 'ocaml-zarith'
+brew 'ocamlbuild'
+brew 'opam'
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Swift ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
+brew 'swift'                            # High-performance system programming language
+brew 'swiftly'
+brew 'swift-format'
+brew 'swiftlint'
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Other ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
+brew 'rocq'                             # Coq proof assistant for higher-order logic
+brew 'rocq-elpi'
+
+brew 'ruby'                             # Ruby programming language; compare `perl`, `python`
+# no installer for https://rvm.io/rvm/install
+
+brew 'shellcheck'                       # Shell script syntax check linter
+
+# brew 'gnu-smalltalk'
+
+brew 'sql-lint'
+
+brew 'yamllint'                         # YAML lint validator
+
+# ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+# │ Layer 04 ❱ Development Tools ❱ IDE & Agents
+# └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+cask 'visual-studio-code'               # Visual Studio Code editor
+
+cask 'kiro', adopt: true                # Agent-based IDE from AWS
+
+mas  'Xcode', id: 497799835             # Xcode, full installation
+cask 'github-copilot-for-xcode'
+brew 'carthage'                         # Carthage Xcode project dependency manager
+
+cask 'claude-code'                      # Terminal-based AI coding assistant
+brew 'claude-cmd'
+brew 'claude-hooks'
+brew 'claudekit'
+
+                                        
+mas  'SnailGit – Git for Finder',       # Finder extension to use Git
+     id: 847260112
+
+cask 'jupyterlab-app'
+
+mas  'Swift Playground', id: 1496833156
+mas  'Swifter for SwiftUI', id: 1621133381
+mas  'DetailsPro', id: 1524366536
+
+mas  'ScriptWidget', id: 1555600758     # Make iOS and macOS widgets in JavaScript
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Database Development ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
+mas  'SQLPro Studio', id: 985614903
+
+mas  'Ninox Database', id: 901110441
+
+# ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+# │ Layer 04 ❱ Development Tools ❱ Runtime
+# └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+brew 'awscli'
+brew 'awscli-local'
+brew 'aws-cdk'
+brew 'aws-keychain'
+
+brew 'sqlite', link: true               # A self-contained, serverless, zero-configuration, transactional engine
+
+brew 'zeromq'                           # High-performance, asynchronous messaging library
+
+# ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+# │ Layer 04 ❱ No longer used; kept for reference
+# └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+# cask 'intellij-idea-ce'               # Settings repository URL: https://github.com/johnstonskj/idea-settings.git
+
+# cask 'sublime-text'
+# cask 'sublime-merge'
+# text wrangler
+
+# mas 'Tap Forms Organizer 5 Database', id: 1081981112
+# mas 'Tap Forms Database Pro', id: 1527890083

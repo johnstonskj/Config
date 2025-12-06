@@ -1,0 +1,63 @@
+
+## ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+## ║ Layer 00 ❱ Bootstrap
+## ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+BUNDLE_DEBUG = false
+
+def include_from(path)
+    include File.join(path, 'Brewfile')
+end
+
+def include(path)
+    include_path = File.expand_path(path, File.dirname(__FILE__))
+    puts "Reading sub-file #{include_path}" if BUNDLE_DEBUG
+    instance_eval(File.read(include_path))
+    puts 'Sub-file complete.' if BUNDLE_DEBUG
+end
+
+tap  'rcmdnk/file'                      # Used to install the brew 'file' command
+brew 'brew-file'                        # This extends the built-in brew 'bundle' command
+
+brew 'mas'                              # Command-line tool for the Apple 'Mac App Store'
+
+tap "buo/cask-upgrade"                  # brew-cask-upgrade is an external command to replace the native upgrade by 
+                                        # offering interactivity, an improved interface, and higher granularity of 
+                                        # what to upgrade.
+                                        # https://github.com/buo/homebrew-cask-upgrade
+
+# Run: `brew cu` and follow the prompts.
+
+## ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+## ║ Layer 01 ❱ Basic Shell Environment
+## ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+include_from './01-shell'
+
+## ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+## ║ Layer 02 ❱ System Integration
+## ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+include_from './02-system-integration'
+
+## ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+## ║ Layer 03 ❱ Productivity
+## ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+include_from './03-productivity'
+
+## ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+## ║ Layer 04 ❱ Development Tools
+## ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+include_from './04-developer'
+
+## ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+## ║ Layer 05 ❱ Personal Apps
+## ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+include_from './05-personal'
+
+## ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+## ║ Additions will appear below this comment
+## ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
