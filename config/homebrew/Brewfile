@@ -3,30 +3,56 @@
 ## ║ Layer 00 ❱ Bootstrap
 ## ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 
-BUNDLE_DEBUG = false
+BREWFILE_DEBUG = false
+
+ENV['HOSTNAME'] = `hostname -s`.strip if ENV['HOSTNAME'].nil?
+ENV['PLATFORM'] = `uname -o`.strip if ENV['PLATFORM'].nil?
+ENV['ARCH'] = `uname -m`.strip if ENV['ARCH'].nil?
 
 def include_from(path)
-    include File.join(path, 'Brewfile')
+    puts "Include brewfiles from path #{path}" if BREWFILE_DEBUG
+    include File.join(path, "Brewfile")
+    include_variants path
 end
 
-def include(path)
-    include_path = File.expand_path(path, File.dirname(__FILE__))
-    puts "Reading sub-file #{include_path}" if BUNDLE_DEBUG
-    instance_eval(File.read(include_path))
-    puts 'Sub-file complete.' if BUNDLE_DEBUG
+def include_variants(path)
+    include File.join(path, "Brewfile-#{ENV['HOSTNAME']}"), optional: true
+    include File.join(path, "Brewfile-#{ENV['PLATFORM']}"), optional: true
+    include File.join(path, "Brewfile-#{ENV['PLATFORM']}-#{ENV['ARCH']}"), optional: true
 end
+
+def include(path, optional = false)
+    include_path = File.expand_path(path, File.dirname(__FILE__))
+    if File.file?(include_path)
+        puts "Reading sub-file #{include_path} (optional: #{optional})" if BREWFILE_DEBUG
+        instance_eval(File.read(include_path))
+        puts 'Sub-file complete.' if BREWFILE_DEBUG
+    elsif optional == false
+        raise FileNotFoundException.new("File not Found: #{include_path}")
+    else
+        puts "Optional sub-file #{include_path} does not exist" if BREWFILE_DEBUG
+    end
+end
+
+# ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+# │ Layer 00 ❱ Bootstrap ❱ Homebrew additional
+# └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 tap  'rcmdnk/file'                      # Used to install the brew 'file' command
 brew 'brew-file'                        # This extends the built-in brew 'bundle' command
 
 brew 'mas'                              # Command-line tool for the Apple 'Mac App Store'
 
-tap "buo/cask-upgrade"                  # brew-cask-upgrade is an external command to replace the native upgrade by 
+tap 'buo/cask-upgrade'                  # brew-cask-upgrade is an external command to replace the native upgrade by 
                                         # offering interactivity, an improved interface, and higher granularity of 
-                                        # what to upgrade.
+                                        # what to upgrade. Run: `brew cu` and follow the prompts.
                                         # https://github.com/buo/homebrew-cask-upgrade
 
-# Run: `brew cu` and follow the prompts.
+# ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+# │ Layer 00 ❱ Bootstrap ❱ Variant Files
+# └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+include_variants "."
 
 ## ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 ## ║ Layer 01 ❱ Basic Shell Environment
