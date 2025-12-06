@@ -26,6 +26,7 @@ mas  'Cicero: A Unicode® Tool',
      id: 1480977453
 mas  'Ultra Character Map', 
      id: 520265986
+mas'  Entity Pro', id: 1508732804       # Unicode for Typographers
 
 # ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 # │ Layer 03 ❱ Productivity ❱ Browsers, Messaging, & Social
@@ -36,9 +37,9 @@ cask 'google-chrome'
 # cask 'brave-browser'
 
 cask 'messenger'
-cask 'signal'
+cask 'signal', adopt: true
 cask 'slack', adopt: true
-cask 'whatsapp'
+cask 'whatsapp', adopt: true
 cask 'zoom', adopt: true
 
 # ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -60,6 +61,12 @@ cask 'protonvpn', adopt: true
 # ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Adobe ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
 
 cask 'adobe-creative-cloud'             # Client to install Adobe apps
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Apple ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
+mas  'Pages', id: 409201541            # Apple's word process and document design
+mas  'Numbers', id: 409203825          # Apple's spreadsheet
+mas  'Keynote', id: 409183694          # Apple's presentation tool
 
 # ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Google ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
 
@@ -88,6 +95,7 @@ cask 'zotero@beta'                      # Collect, organize, cite, and share res
 
 cask 'omnigraffle', adopt: true         # Diagramming
 
+mas  'Soulver 3', id: 1508732804        # Fancy-ass calculator, converter and more
 mas  'MathStudio', id: 829912893        # Simple CAS for Mac
 
 cask 'claude', adopt: true              # Anthropic's official Claude AI desktop app

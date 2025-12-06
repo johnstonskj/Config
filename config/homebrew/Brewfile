@@ -38,6 +38,8 @@ end
 # │ Layer 00 ❱ Bootstrap ❱ Homebrew additional
 # └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
+cask_args appdir: "/Applications"
+
 tap  'rcmdnk/file'                      # Used to install the brew 'file' command
 brew 'brew-file'                        # This extends the built-in brew 'bundle' command
 

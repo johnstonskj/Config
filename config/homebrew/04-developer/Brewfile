@@ -38,6 +38,7 @@ cask 'gitbutler'
 
 brew 'gh'                               # Github command-line interface
 brew 'github-mcp-server'
+mas'  Clone in VS Code', id: 1508732804 # Safari extension, clone from forge to vscode
 
 brew 'mdbook'                           # Create online books from Markdown
 brew 'plantuml'                         # Draw UML diagrams from text
@@ -178,7 +179,7 @@ cask 'jupyterlab-app'
 
 mas  'Swift Playground', id: 1496833156
 mas  'Swifter for SwiftUI', id: 1621133381
-mas  'DetailsPro', id: 1524366536
+mas  'DetailsPro', id: 1524366536       # Design tool for SwiftUI
 
 mas  'ScriptWidget', id: 1555600758     # Make iOS and macOS widgets in JavaScript
 
