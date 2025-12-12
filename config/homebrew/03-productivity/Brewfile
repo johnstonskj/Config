@@ -91,6 +91,10 @@ cask 'macdown'                          # MacDown simple markdown editor
 cask 'mactex'                           # MacTex: LaTeX document preparation system with high-quality typesetting.
 cask 'texifier'                         # Damn fine LaTeX editor
 
+cask 'obsidian', adopt: true            # Knowledge base that works on local Markdown files
+
+cask 'raindropio', adopt: true          # All-in-one bookmark manager and publisher
+
 cask 'zotero@beta'                      # Collect, organize, cite, and share research sources
 
 cask 'omnigraffle', adopt: true         # Diagramming
