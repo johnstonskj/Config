@@ -1,5 +1,5 @@
 # -*- mode: sh; eval: (sh-set-shell "zsh") -*-
 
-if [[ ${OSTYPE} == darwin* ]] ; then
-    export PATH="${PATH}:$(xcode-select -p)"
+if [[ "${OSTYPE}" == [Dd]arwin* ]] ; then
+    path_append_if_exists "$(xcode-select -p)"
 fi
