@@ -1,0 +1,10 @@
+## -*- mode: sh; eval: (sh-set-shell "zsh") -*-
+
+if homebrew_formula_exists eza; then
+    alias exa='eza --color=auto'
+    alias ls='eza'
+    alias l='eza -lT -all --git --group-directories-first'
+    alias ll='eza -l --all --git --group-directories-first'
+    alias lt='eza -T --git --git-ignore --level=2 --group-directories-first'
+    alias llt='eza -lT --git --git-ignore --level=2 --group-directories-first'
+fi
