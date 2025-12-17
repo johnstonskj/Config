@@ -28,6 +28,7 @@ ARG_SRC=()
 ARG_DOT_DROP=0
 ARG_DOT_PREFIX=0
 ARG_DONT_MAKE_PATHS=0
+ARG_ADD_GITIGNORE=0
 
 STOW_AWAY_REPOSITORY="${STOW_AWAY_REPOSITORY:-${HOME}/.${CMD_NAME}}"
 
@@ -68,6 +69,7 @@ function usage {
     echo "    $(usage_arg -d) | $(usage_arg --drop-dot)   removes any leading '.' in the target name"
     echo "    $(usage_arg -D) | $(usage_arg --dot-prefix) replaces any leading '.' with 'dot-' in the target name"
     echo "    $(usage_arg --dont-make-paths) do not create missing target directories"
+    echo "    $(usage-arg --add-git-ignore)  create .gitignore files for moved directories"
     echo
     exit ${1}
 }
@@ -107,6 +109,10 @@ function parse_cmdline {
         --dont-make-paths)
             ARG_DONT_MAKE_PATHS=1
             log_trace $LINENO "setting flag ARG_DONT_MAKE_PATHS"
+            ;;
+        --add-git-ignore)
+            ARG_ADD_GITIGNORE=1
+            log_trace $LINENO "setting flag ARG_ADD_GITIGNORE"
             ;;
         -t | --target)
             if [[ "${2}" =~ bin|cache|config|data|state|runtime ]]; then
@@ -230,6 +236,22 @@ function command_move {
 
         log_trace $LINENO "mv ${src_path} ${target_path}${tgt_file}"
         mv "${src_path}" "${target_path}${tgt_file}"
+
+        if [[ -d "${target_path}${tgt_file}" && ${ARG_ADD_GITIGNORE} -eq 1 ]]; then
+            gitignore="${target_path}${tgt_file}/.gitignore"
+            log_trace $LINENO "creating ${gitignore} in target directory"
+            if [[ ! -f "${gitignore}" ]]; then
+                cat <<EOF > "${gitignore}"
+# Ignore everything in this directory, and sub-directories
+**/*
+
+# Except this file
+!.gitignore
+EOF
+            else
+                log_warning $LINENO "file ${gitignore} exists, skipping"
+            fi
+        fi
 
         log_trace $LINENO "ln -s ${target_path}${tgt_file} ${src_path}"
         ln -s "${target_path}${tgt_file}" "${src_path}"
