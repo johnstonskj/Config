@@ -1,9 +1,11 @@
 # -*- mode: sh; eval: (sh-set-shell "zsh") -*-
 
-LLVM_PREFIX="${HOMEBREW_PREFIX}/opt/llvm"
+if homebrew_formula_exists llvm; then
+    LLVM_PREFIX=$(homebrew_formula_prefix llvm)
 
-if [[ -d "${LLVM_PREFIX}" ]]; then
-    export PATH="${LLVM_PREFIX}/bin:$PATH"
-    export LDFLAGS="-L${LLVM_PREFIX}/lib -L${LLVM_PREFIX}/lib/c++ -Wl,-rpath,${LLVM_PREFIX}/lib/c++"
-    export CPPFLAGS="-I${LLVM_PREFIX}/include"
+    if [[ -d "${LLVM_PREFIX}" ]]; then
+        path_append_if_exists "${LLVM_PREFIX}/bin"
+        export LDFLAGS="-L${LLVM_PREFIX}/lib -L${LLVM_PREFIX}/lib/c++ -Wl,-rpath,${LLVM_PREFIX}/lib/c++"
+        export CPPFLAGS="-I${LLVM_PREFIX}/include"
+    fi
 fi
