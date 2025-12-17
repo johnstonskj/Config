@@ -1,7 +1,5 @@
 # -*- mode: sh; eval: (sh-set-shell "zsh") -*-
 
-GIT_PREFIX="${HOMEBREW_PREFIX}/opt/git"
-
-if [[ -d "${GIT_PREFIX}" ]]; then
-    export PATH="${GIT_PREFIX}/bin:$PATH"
+if homebrew_formula_exists git; then
+    path_append "$(homebrew_formula_prefix git)/bin"
 fi
