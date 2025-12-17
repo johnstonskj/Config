@@ -1,6 +1,6 @@
 # -*- mode: sh; eval: (sh-set-shell "zsh") -*-
 
-if command -v emacsclient >/dev/null 2>&1; then
-    export ALTERNATE_EDITOR=""
-    export EMACS_CONF=$HOME/.emacs.d
+if homebrew_formula_exists emacs-plus; then
+    export ALTERNATE_EDITOR=
+    export EMACS_CONF="${HOME}/.emacs.d"
 fi
