@@ -1,6 +1,6 @@
 # -*- mode: sh; eval: (sh-set-shell "zsh") -*-
 
-if command -v gsed >/dev/null 2>&1; then
-    alias sed=gsed
+if homebrew_formula_exists gsed; then
+    alias sed='gsed'
     alias sedi='gsed -i'
 fi
