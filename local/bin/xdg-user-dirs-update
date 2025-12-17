@@ -143,7 +143,7 @@ write_user_dirs() {
                     echo "XDG_${key}_DIR=\"\$HOME/$dir\"" >> $OUTPUT_FILE
                 fi
             fi
-        done < "$XDG_ROOT/user-dirs.defaults"
+        done < "${XDG_ROOT}/user-dirs.defaults"
     elif [[ -f $OUTPUT_FILE && $OPT_FORCE -eq 1 ]] ; then
         echo "Error: output file exists, try using --force"
     fi
