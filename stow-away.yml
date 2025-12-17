@@ -1,0 +1,42 @@
+---
+folders:
+  config:
+    self: ~/.config
+    folders:
+      bash:
+        links:
+          - dot-bash_profile => ~/.bash_profile
+          - dot-bashrc => ~/.bashrc
+          - dot-profile => ~/.bashrc
+      gpg:
+        self: ~/.gnupg
+      ssh:
+        self: ~/.ssh
+      tmux:
+        links:
+          - tmux.conf => ~
+      vim:
+        self: ~/.vimrc
+      wakatime:
+        links:
+          - wakatime.cfg => ~
+      zsh:
+        links:
+          - dot-zlogin => ~/.zlogin
+          - dot-zshenv => ~/.zshenv
+          - dot-zshrc => ~/.zshrc
+  .local:
+    self: ~/.local
+    folders:
+      state:
+        links:
+          - cargo => "~/.cargo"
+          - ipython => "~/.ipython"
+          - jupyter => "~/.jupyter"
+          - rustup => "~/.rustup"
+          - rvm => "~/.rvm"
+          - vscode => "~/.vscode"
+          - swiftpm => "~/.swiftpm"
+      var:
+        links:
+          - npm => ~/.npm
