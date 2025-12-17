@@ -1,8 +1,10 @@
 # -*- mode: sh; eval: (sh-set-shell "zsh") -*-
 
-if [[ $OSTYPE = (darwin|freebsd)* ]] ; then
+if [[ $OSTYPE = [Dd]arwin* ]] ; then
    export RACKET_VERSION=$(ls -d /Applications/Racket* |cut -d "v" -f 2 |sort -n |tail -1)
    export RACKET_HOME="/Applications/Racket\ v${RACKET_VERSION}"
    export RACKET_USER="${HOME}/Library/Racket/${RACKET_VERSION}"
-   export PATH="$PATH:${RACKET_HOME}/bin:${RACKET_USER}/bin"
+   
+   path_append_if_exists "${RACKET_HOME}/bin"
+   path_append_if_exists "${RACKET_USER}/bin"
 fi
