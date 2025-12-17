@@ -1,8 +1,10 @@
 # -*- mode: sh; eval: (sh-set-shell "zsh") -*-
 
-if command -v guile >/dev/null 2>&1; then
+if homebrew_formula_exists guile; then
+    GUILE_VERSION=$(guile --version | head -n1 | cut -d " " -f 4 | cut -d "." -f 1-2)
     GUILE_PREFIX=$(dirname $(dirname $(readlink -f $(command -v guile))))
-    export GUILE_LOAD_PATH="${GUILE_PREFIX}/share/guile/site/3.0"
-    export GUILE_LOAD_COMPILED_PATH="${GUILE_PREFIX}/lib/guile/3.0/site-ccache"
-    export GUILE_SYSTEM_EXTENSIONS_PATH="${GUILE_PREFIX}/lib/guile/3.0/extensions"
+    
+    export GUILE_LOAD_PATH="${GUILE_PREFIX}/share/guile/site/${GUILE_VERSION}"
+    export GUILE_LOAD_COMPILED_PATH="${GUILE_PREFIX}/lib/guile/${GUILE_VERSION}/site-ccache"
+    export GUILE_SYSTEM_EXTENSIONS_PATH="${GUILE_PREFIX}/lib/guile/${GUILE_VERSION}/extensions"
 fi
