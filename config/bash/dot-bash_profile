@@ -1,0 +1,5 @@
+# -*- mode: sh; eval: (sh-set-shell "bash") -*-
+
+if [[ -s "${HOME}/.profile" ]]; then
+    source "${HOME}/.profile" # Load the default .profile
+fi
