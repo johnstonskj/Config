@@ -1,7 +1,5 @@
 # -*- mode: sh; eval: (sh-set-shell "zsh") -*-
 
-GETOPT_BIN="${HOMEBREW_PREFIX}/opt/gnu-getopt/bin"
-
-if [[ -f "${GETOPT_BIN}/getopt" ]]; then
-    export PATH="${GETOPT_BIN}:$PATH"
+if homebrew_formula_exists gnu-getopt; then
+    path_append "$(homebrew_formula_prefix gnu-getopt)/bin"
 fi
