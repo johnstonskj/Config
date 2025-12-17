@@ -56,7 +56,7 @@ log_scope_enter "zshenv"
 
 log_scope_enter "env-basics"
 
-export PAGER=less
+export ARCHFLAGS="-arch $(uname -m)"
 
 if [[ -n "${SSH_CONNECTION}" ]]; then
     export EDITOR=vim
@@ -64,9 +64,9 @@ else
     export EDITOR='emacsclient -nw'
 fi
 
-export VISUAL=emacs
+export PAGER=less
 
-export ARCHFLAGS="-arch $(uname -m)"
+export VISUAL=emacs
 
 log_scope_exit "env-basics"
 
@@ -163,6 +163,15 @@ function xdg_data_exists_for {
     [[ -d $(xdg_data_for "${1}") ]]
 }
 
+function xdg_state_for {
+    local package="${1}"
+    echo "${XDG_STATE_HOME}/${package}"
+}
+
+function xdg_state_exists_for {
+    [[ -d $(xdg_state_for "${1}") ]]
+}
+
 ############################################################################
 # Top-level paths
 ############################################################################
@@ -229,13 +238,14 @@ else
 fi
 log_scope_exit "homebrew"
 
-HOMEBREW_INIT="$(xdg_config_for homebrew)/init-functions.zsh"
-if [[ -s "${HOMEBREW_INIT}" ]]; then
-    source "${HOMEBREW_INIT}" 
+log_scope_enter "cargo"
+CARGO_INIT="$(xdg_config_for cargo)/init-functions.zsh"
+if [[ -s "${CARGO_INIT}" ]]; then
+    source "${CARGO_INIT}" 
 else
-    log_error "No homebrew init-functions script found"
+    log_error "No cargo init-functions script found"
 fi
-log_scope_exit "homebrew"
+log_scope_exit "cargo"
 
 log_scope_exit "package-managers"
 
