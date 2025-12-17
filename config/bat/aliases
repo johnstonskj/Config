@@ -1,4 +1,6 @@
 # -*- mode: sh; eval: (sh-set-shell "zsh") -*-
 
-alias cat=bat
-alias battail='bat --paging=never -l log'
+if homebrew_formula_exists bat; then
+    alias cat='bat'
+    alias battail='bat --paging=never -l log'
+fi
