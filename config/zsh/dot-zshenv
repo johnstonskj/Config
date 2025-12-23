@@ -37,24 +37,26 @@ if ! typeset -f log_critical >/dev/null; then
         echo "Error: logging script ${SHLOG_SOURCE} not found."
     fi
 fi
-
-log_info "Starting Zsh initialization"
-
-log_debug "os-name: $(uname -s | tr '[:upper:]' '[:lower:]')"
-log_debug "os-version: $(uname -r)"
-log_debug "host-name: $(hostname)"
-log_debug "host-arch: $(uname -m)"
-log_debug "user-id: $(whoami)"
-log_debug "user-home: $HOME"
-log_debug "shell-version: ${ZSH_VERSION}"
+export SHLOG_LEVEL=1 # Errors only
 
 log_scope_enter "zshenv"
+
+############################################################################
+# Shell Manager
+############################################################################
+
+SHELLMGR_SOURCE=${XDG_DATA_HOME:-${XDG_LOCAL_ROOT}/share}/shellmgr/shellmgr.zsh
+if [[ -f ${SHELLMGR_SOURCE} ]]; then
+    source ${SHELLMGR_SOURCE}
+else
+    echo "Error: shell manager script ${SHELLMGR_SOURCE} not found."
+fi
 
 ############################################################################
 # Basic Environment
 ############################################################################
 
-log_scope_enter "env-basics"
+log_scope_enter "basics"
 
 export ARCHFLAGS="-arch $(uname -m)"
 
@@ -68,7 +70,7 @@ export PAGER=less
 
 export VISUAL=emacs
 
-log_scope_exit "env-basics"
+log_scope_exit "basics"
 
 ############################################################################
 # Sessions
@@ -78,105 +80,10 @@ log_scope_exit "env-basics"
 export SHELL_SESSIONS_DISABLE=1
 
 ############################################################################
-# Define path functions
-############################################################################
-
-function path_append {
-    if [[ ":${PATH}:" != *":${1}:"* ]]; then
-        export PATH=${PATH}:${1}
-    fi
-}
-
-function path_append_if_exists {
-    if [[ -d "${1}" ]]; then
-        path_append "${1}"
-    fi
-}
-
-function path_prepend {
-    if [[ ":${PATH}:" != *":${1}:"* ]]; then
-        export PATH="${1}:${PATH}"
-    fi
-}
-
-function path_prepend_if_exists {
-    if [[ -d "${1}" ]]; then
-        path_prepend "${1}"
-    fi
-}
-
-function man_path_append {
-    if [[ ":$MANPATH:" != *":${1}:"* ]]; then
-        export MANPATH="${MANPATH}:${1}"
-    fi
-}
-
-function man_path_append_if_exists {
-    if [[ -d "${1}" ]]; then
-        man_path_append "${1}"
-    fi
-}
-
-function function_path_append {
-    if [[ ":${FPATH}:" != *":${1}:"* ]]; then
-        export FPATH="${FPATH}:${1}"
-    fi
-}
-
-function function_path_append_if_exists {
-    if [[ -d "${1}" ]]; then
-        function_path_append "${1}"
-    fi
-}
-
-function source_if_exists {
-    # Don't bother to source zero-length files
-    if [[ -s "${1}" ]]; then
-        source "${1}"
-    fi
-}
-
-function xdg_cache_for {
-    local package="${1}"
-    echo "${XDG_CACHE_HOME}/${package}"
-}
-
-function xdg_cache_exists_for {
-    [[ -d $(xdg_cache_for "${1}") ]]
-}
-
-function xdg_config_for {
-    local package="${1}"
-    echo "${XDG_CONFIG_HOME}/${package}"
-}
-
-function xdg_config_exists_for {
-    [[ -d $(xdg_config_for "${1}") ]]
-}
-
-function xdg_data_for {
-    local package="${1}"
-    echo "${XDG_DATA_HOME}/${package}"
-}
-
-function xdg_data_exists_for {
-    [[ -d $(xdg_data_for "${1}") ]]
-}
-
-function xdg_state_for {
-    local package="${1}"
-    echo "${XDG_STATE_HOME}/${package}"
-}
-
-function xdg_state_exists_for {
-    [[ -d $(xdg_state_for "${1}") ]]
-}
-
-############################################################################
 # Top-level paths
 ############################################################################
 
-log_scope_enter "env-paths"
+log_scope_enter "paths"
 
 path_append_if_exists /usr/local/bin
 path_append_if_exists /usr/local/sbin
@@ -184,30 +91,17 @@ path_prepend_if_exists ${XDG_LOCAL_ROOT}/bin
 
 man_path_append_if_exists /usr/local/man
 
-log_scope_exit "env-paths"
+log_scope_exit "paths"
 
 ############################################################################
-# Configure XDG directories
+# Configure directories
 ############################################################################
 
-log_scope_enter "env-xdg"
-
-# This is for bootstrap purposes only
-XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-${HOME}/.config}
-
-if [[ -s ${XDG_CONFIG_HOME}/base-dirs.dirs ]]; then
-    source ${XDG_CONFIG_HOME}/base-dirs.dirs
-else
-    log_error "File ${XDG_CONFIG_HOME}/base-dirs.dirs not present"
-fi
-
-if [[ -s ${XDG_CONFIG_HOME}/user-dirs.dirs ]]; then
-    source ${XDG_CONFIG_HOME}/user-dirs.dirs
-else
-    log_error "File ${XDG_CONFIG_HOME}/user-dirs.dirs not present"
-fi
+shellmgr_xdg_init
 
 # Some Zsh directories based on the above:
+
+log_scope_enter "zsh-dirs"
 
 export ZSH_CACHE_HOME=$(xdg_cache_for zsh)
 if [[ ! -d ${ZSH_CACHE_HOME} ]]; then
@@ -221,54 +115,16 @@ if [[ ! -d ${ZSH_STATE_HOME} ]]; then
     mkdir -p ${ZSH_STATE_HOME}
 fi
 
-log_scope_exit "env-xdg"
+log_scope_exit "zsh-dirs"
 
 ############################################################################
-# Package-managers
+# Shell Manager ...
 ############################################################################
 
-log_scope_enter "package-managers"
+shellmgr_homebrew_init
+shellmgr_cargo_init
 
-log_scope_enter "homebrew"
-HOMEBREW_INIT="$(xdg_config_for homebrew)/init-functions.zsh"
-if [[ -s "${HOMEBREW_INIT}" ]]; then
-    source "${HOMEBREW_INIT}" 
-else
-    log_error "No homebrew init-functions script found"
-fi
-log_scope_exit "homebrew"
-
-log_scope_enter "cargo"
-CARGO_INIT="$(xdg_config_for cargo)/init-functions.zsh"
-if [[ -s "${CARGO_INIT}" ]]; then
-    source "${CARGO_INIT}" 
-else
-    log_error "No cargo init-functions script found"
-fi
-log_scope_exit "cargo"
-
-log_scope_exit "package-managers"
-
-############################################################################
-# dot-config package-specific `env` files
-############################################################################
-
-log_scope_enter "package-env"
-
-for dir in ${XDG_CONFIG_HOME}/*; do
-    if [[ -s "${dir}/env" ]] ; then
-        log_scope_enter "$(basename ${dir})"
-        source "${dir}/env"
-        log_scope_exit "$(basename ${dir})"
-    fi
-done
-
-log_scope_exit "package-env"
-
-############################################################################
-# Just in case......
-############################################################################
-
-source_if_exists ${ZDOTDIR}/.zshenv-work
+shellmgr_phase_env
+shellmgr_source_work_env
 
 log_scope_exit "zshenv"

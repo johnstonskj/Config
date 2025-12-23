@@ -1,45 +1,35 @@
 # -*- mode: sh; eval: (sh-set-shell "zsh") -*-
 
-log_scope_enter "zshrc"
+log_scope_enter zshrc
 
 ############################################################################
-# Zsh Function Paths
+# Function paths
 ############################################################################
 
-log_scope_enter "functions"
+log_scope_enter functions
 
-function_path_append_if_exists "${FPATH}:${HOMEBREW_PREFIX}/share/zsh/functions"
-function_path_append_if_exists "${FPATH}:${HOMEBREW_PREFIX}/share/zsh/site-functions"
+function_path_append_if_exists "${HOMEBREW_PREFIX}/share/zsh/functions"
+function_path_append_if_exists "${HOMEBREW_PREFIX}/share/zsh/site-functions"
 
-log_scope_exit "functions"
+log_scope_exit functions
 
 ############################################################################
-# dot-config package-specific `aliases` files
+# Common aliases
 ############################################################################
 
-log_scope_enter "aliases"
+log_scope_enter aliases
 
 alias hd='od -tcx1'
 alias myip='curl http://ipecho.net/plain; echo'
 alias todo="find . -type f | xargs grep -n 'TODO:' | $SED $'1i\\\\\nFILE:LINE:MEMO:COMMENT\n' | $SED -r 's/:[ ]+[^T]*/:/' | column -t -s ':'"
 
-log_scope_enter "package-aliases"
-
-for dir in ${XDG_CONFIG_HOME}/*; do
-    if [[ -f "${dir}/aliases" ]] ; then
-        log_scope_enter "$(basename ${dir})"
-        source "${dir}/aliases"
-        log_scope_exit "$(basename ${dir})"
-    fi
-done
-
-log_scope_exit "package-aliases"
-
-log_scope_exit "aliases"
+log_scope_exit aliases
 
 ############################################################################
 # Completions
 ############################################################################
+
+log_scope_enter completions
 
 export skip_global_compinit=1
 
@@ -50,30 +40,17 @@ else
     autoload -Uz compinit -d ${ZSH_COMPDUMP}/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}
 fi
 
-############################################################################
-# dot-config package-specific `completion` directory
-############################################################################
-
-log_scope_enter "package-completions"
-
-for dir in ${XDG_CONFIG_HOME}/*; do
-    local name=$(basename ${dir})
-    if [[ -f "${dir}/completions/${name}.zsh" ]] ; then
-        log_scope_enter "$(basename ${dir})"
-        function_path_append_if_exists "${dir}/completions"
-        log_scope_exit "$(basename ${dir})"
-    fi
-done
+shellmgr_add_completion_paths
 
 autoload -Uz compinit && compinit
 
-log_scope_exit "package-completions"
+log_scope_exit completions
 
 ############################################################################
 # History
 ############################################################################
 
-log_scope_enter "history"
+log_scope_enter history
 
 function he() {
     # check if we passed any parameters
@@ -107,26 +84,24 @@ setopt HIST_VERIFY              # Do not execute immediately upon history expans
 setopt APPEND_HISTORY           # append to history file
 setopt HIST_NO_STORE            # Don't store history commands
 
-log_scope_exit "history"
+log_scope_exit history
 
 ############################################################################
-# Interactive environment
+# Plugins
 ############################################################################
 
-log_scope_enter "prompt"
+log_scope_enter plugins
 
-eval "$(mcfly init zsh)"
+source_if_exists ${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source_if_exists ${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-eval "$(starship init zsh)"
-
-eval "$(zoxide init zsh)"
-
-log_scope_exit "prompt"
+log_scope_exit plugins
 
 ############################################################################
-# Just in case......
+# Shell Manager ...
 ############################################################################
 
-source_if_exists "${ZDOTDIR}/.zshrc-work"
+shellmgr_phase_rc
+shellmgr_source_work_rc
 
-log_scope_exit "zshrc"
+log_scope_exit zshrc

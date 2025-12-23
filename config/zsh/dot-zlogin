@@ -4,15 +4,16 @@
 # Required for login shells
 ############################################################################
 
-log_scope_enter "zlogin"
+log_scope_enter zlogin
 
 export LC_ALL=en_US.UTF-8
 export TERM="xterm-256color"
 
 ############################################################################
-# Just in case......
+# Shell Manager ...
 ############################################################################
 
-source_if_exists ${ZDOTDIR}/.zlogin-work
+shellmgr_phase_login
+shellmgr_source_work_login
 
-log_scope_exit "zlogin"
+log_scope_exit zlogin

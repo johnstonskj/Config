@@ -1,0 +1,5 @@
+# -*- mode: sh; eval: (sh-set-shell "zsh") -*-
+
+if homebrew_formula_exists mcfly; then
+    shellmgr_command_init mcfly init zsh
+fi
