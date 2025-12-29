@@ -40,3 +40,14 @@ folders:
       var:
         links:
           - npm => ~/.npm
+raw-links:
+  - source:
+  - target:
+
+links:
+  - source:
+    package:
+    dot-prefix: ignore|remove|text
+    make-paths: true
+    git-ignore: true
+    target: bin|cache|config|data|state|runtime

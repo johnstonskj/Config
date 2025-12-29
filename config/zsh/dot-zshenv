@@ -30,7 +30,7 @@ export ZDOTDIR=${ZDOTDIR:-${HOME}}
 XDG_LOCAL_ROOT=${HOME}/.local
 
 if ! typeset -f log_critical >/dev/null; then
-    SHLOG_SOURCE=${XDG_DATA_HOME:-${XDG_LOCAL_ROOT}/share}/shlog/shlog.sh
+    SHLOG_SOURCE=~/Projects/shlog/shlog.bash
     if [[ -f ${SHLOG_SOURCE} ]]; then
         source ${SHLOG_SOURCE}
     else

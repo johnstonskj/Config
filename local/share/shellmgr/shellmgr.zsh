@@ -68,21 +68,38 @@ function source_if_exists {
 ############################################################################
 
 function shellmgr_xdg_init {
+    function load_and_export {
+        local file_name="${1}"
+        while IFS= read -r line; do
+            if [[ ${line} =~ ^XDG_[A-Z_]+= ]]; then
+                eval "export ${line}"
+            fi
+        done < "${file_name}"
+    }
+
     # This is for bootstrap purposes only
-    local XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-${HOME}/.config}
+    export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-${HOME}/.config}
 
     log_scope_enter "xdg-init"
 
+    log_trace "XDG_CONFIG_HOME=${XDG_CONFIG_HOME}"
+
     if [[ -s ${XDG_CONFIG_HOME}/base-dirs.dirs ]]; then
-        source ${XDG_CONFIG_HOME}/base-dirs.dirs
+        load_and_export ${XDG_CONFIG_HOME}/base-dirs.dirs
     else
         log_error "File ${XDG_CONFIG_HOME}/base-dirs.dirs not present"
     fi
 
     if [[ -s ${XDG_CONFIG_HOME}/user-dirs.dirs ]]; then
-        source ${XDG_CONFIG_HOME}/user-dirs.dirs
+        load_and_export ${XDG_CONFIG_HOME}/user-dirs.dirs
     else
         log_error "File ${XDG_CONFIG_HOME}/user-dirs.dirs not present"
+    fi
+
+    if [[ ${SHLOG_LEVEL} -ge 5 ]]; then
+        for line in $(env | grep -E "^XDG_"); do
+            log_debug $line
+        done
     fi
 
     log_scope_exit "xdg-init"
@@ -266,7 +283,7 @@ function shellmgr_source_work_logout {
 function shellmgr_packagemgr_init {
     local package=$1
     local config_dir="${XDG_CONFIG_HOME}/${package}"
-    local shell_config="${config_dir}/${__SHELLMGR_PREFIX}-packagemgr"
+    local shell_config="${config_dir}/${__SHELLMGR_PREFIX}-packagemgr.zsh"
     local shell_specific_config="${shell_config}.${__SHELLMGR_SHELL}"
 
     log_scope_enter "${__SHELLMGR_PREFIX}-packagemgr ${package}"
@@ -278,7 +295,7 @@ function shellmgr_packagemgr_init {
         log_trace "sourcing ${shell_config}"
         source "${shell_config}"
     else
-        log_warning "No package manager script found in ${config_dir}"
+        log_warning "No package manager script '${__SHELLMGR_PREFIX}-packagemgr.zsh' found in ${config_dir}"
     fi
 
     log_scope_exit "${__SHELLMGR_PREFIX}-packagemgr ${package}"

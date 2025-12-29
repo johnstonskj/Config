@@ -1,1 +1,0 @@
-/Users/johnstonskj/Projects/shlog/shlog.sh

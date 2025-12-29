@@ -42,7 +42,12 @@ fi
 
 shellmgr_add_completion_paths
 
+zmodload zsh/complist
+
 autoload -Uz compinit && compinit
+
+zmodload zsh/curses
+autoload -Uz colors && colors
 
 log_scope_exit completions
 
