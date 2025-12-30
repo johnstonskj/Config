@@ -1,1 +1,11 @@
-db.zo
+# Ignore everything in this directory, and sub-directories
+**/*
+
+# Except these files/directories
+!.gitignore
+!/delta
+!/gnupg
+!/icons
+!/lftp
+!/shellmgr
+!/uv

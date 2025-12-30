@@ -1,4 +1,6 @@
 # Ignore everything in this directory, and sub-directories
 **/*
+
 # Except this file
 !.gitignore
+!**/.gitkeep
