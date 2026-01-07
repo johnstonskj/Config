@@ -1,0 +1,91 @@
+# `sheldon` configuration file
+# ----------------------------
+#
+# You can modify this file directly or you can use one of the following
+# `sheldon` commands which are provided to assist in editing the config file:
+#
+# - `sheldon add` to add a new plugin to the config file
+# - `sheldon edit` to open up the config file in the default editor
+# - `sheldon remove` to remove a plugin from the config file
+#
+# See the documentation for more https://github.com/rossmacarthur/sheldon#readme
+
+shell = "zsh"
+
+[plugins]
+
+# My Specials:
+
+[plugins.xdg]
+local = "~/Projects/zsh-xdg-plugin"
+
+[plugins.shlog]
+local = "~/Projects/zsh-shlog-plugin"
+
+[plugins.brew]
+local = "~/Projects/zsh-brew-plugin"
+
+[plugins.paths]
+local = "~/Projects/zsh-paths-plugin"
+
+# The Rest:
+
+[plugins.bat]
+local = "~/Projects/zsh-bat-plugin"
+
+[plugins.cargo]
+local = "~/Projects/zsh-cargo-plugin"
+
+[plugins.my-emacs]
+local = "~/Projects/zsh-emacs-plugin"
+
+[plugins.eza]
+local = "~/Projects/zsh-eza-plugin"
+
+[plugins.my-fzf]
+local = "~/Projects/zsh-fzf-plugin"
+
+[plugins.guile]
+local = "~/Projects/zsh-guile-plugin"
+
+[plugins.mcfly]
+local = "~/Projects/zsh-mcfly-plugin"
+
+[plugins.racket]
+local = "~/Projects/zsh-racket-plugin"
+
+[plugins.ruby]
+local = "~/Projects/zsh-ruby-plugin"
+
+[plugins.starship]
+local = "~/Projects/zsh-starship-plugin"
+
+# Externals:
+
+[plugins.emacs]
+github = "Flinner/zsh-emacs"
+
+[plugins.fzf]
+github = "scaryrawr/fzf.zsh"
+
+[plugins.fzf-tab]
+github = "Aloxaf/fzf-tab"
+
+[plugins.functions]
+github = "mattmc3/zfunctions"
+
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+use = ["{{ name }}.zsh"]
+
+[plugins.zsh-syntax-highlighting]
+github = "zsh-users/zsh-syntax-highlighting"
+
+# The _maybe_ list:
+# 
+# - https://github.com/singular0/zsh-env-secrets
+# - https://github.com/tom-power/fzf-tab-widgets.git
+
+[templates]
+BIN_PATH = 'export PATH="{{ dir }}/bin:$PATH"'
+bin_path = 'path=( "{{ dir }}/bin" $path )'
