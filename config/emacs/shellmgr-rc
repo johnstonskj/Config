@@ -1,6 +1,0 @@
-# -*- mode: sh; eval: (sh-set-shell "zsh") -*-
-
-if homebrew_formula_exists emacs-plus; then
-    alias emacs='emacsclient -nw'
-    alias gemacs='emacsclient -c'
-fi

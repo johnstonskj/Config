@@ -1,7 +1,0 @@
-# -*- mode: sh; eval: (sh-set-shell "zsh") -*-
-
-if homebrew_formula_exists rustup; then
-    export CARGO_HOME="${CARGO_HOME:-${HOME}/.cargo}"
-
-    path_append "${CARGO_HOME}/bin"
-fi

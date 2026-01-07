@@ -1,5 +1,0 @@
-# -*- mode: sh; eval: (sh-set-shell "zsh") -*-
-
-if homebrew_formula_exists bat; then
-    export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-fi
