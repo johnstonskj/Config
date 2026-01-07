@@ -9,11 +9,4 @@ log_scope_enter zlogin
 export LC_ALL=en_US.UTF-8
 export TERM="xterm-256color"
 
-############################################################################
-# Shell Manager ...
-############################################################################
-
-shellmgr_phase_login
-shellmgr_source_work_login
-
 log_scope_exit zlogin

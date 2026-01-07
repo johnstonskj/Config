@@ -3,15 +3,14 @@
 log_scope_enter zshrc
 
 ############################################################################
-# Function paths
+# Plugin Manager (Sheldon)
 ############################################################################
 
-log_scope_enter functions
+log_scope_enter sheldon
 
-function_path_append_if_exists "${HOMEBREW_PREFIX}/share/zsh/functions"
-function_path_append_if_exists "${HOMEBREW_PREFIX}/share/zsh/site-functions"
+eval "$(sheldon source)"
 
-log_scope_exit functions
+log_scope_exit sheldon
 
 ############################################################################
 # Common aliases
@@ -39,8 +38,6 @@ if (( e)); then
 else
     autoload -Uz compinit -d ${ZSH_COMPDUMP}/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}
 fi
-
-shellmgr_add_completion_paths
 
 zmodload zsh/complist
 
@@ -90,23 +87,5 @@ setopt APPEND_HISTORY           # append to history file
 setopt HIST_NO_STORE            # Don't store history commands
 
 log_scope_exit history
-
-############################################################################
-# Plugins
-############################################################################
-
-log_scope_enter plugins
-
-source_if_exists ${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source_if_exists ${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-log_scope_exit plugins
-
-############################################################################
-# Shell Manager ...
-############################################################################
-
-shellmgr_phase_rc
-shellmgr_source_work_rc
 
 log_scope_exit zshrc

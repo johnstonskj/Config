@@ -25,32 +25,39 @@
 #
 ############################################################################
 
+############################################################################
+# Bootstrap
+############################################################################
+
 export ZDOTDIR=${ZDOTDIR:-${HOME}}
 
-XDG_LOCAL_ROOT=${HOME}/.local
+export XXDG_PROJECT_HOME=${XDG_PROJECT_HOME:-${HOME}/Projects}
+export XXDG_LOCAL_ROOT=${HOME}/.local
 
-if ! typeset -f log_critical >/dev/null; then
-    SHLOG_SOURCE=~/Projects/shlog/shlog.bash
-    if [[ -f ${SHLOG_SOURCE} ]]; then
-        source ${SHLOG_SOURCE}
+bootstrap_plugin_load() {
+    local plugin_name="${1}"
+    local plugin_path="${XXDG_PROJECT_HOME}/zsh-${plugin_name}-plugin/${plugin_name}.plugin.zsh"
+
+    if [[ -f ${plugin_path} ]]; then
+        source ${plugin_path}
     else
-        echo "Error: logging script ${SHLOG_SOURCE} not found."
+        echo "Error: shell manager script ${plugin_path} not found."
     fi
-fi
+}
+
+bootstrap_plugin_load xdg
+bootstrap_plugin_load shlog
+bootstrap_plugin_load paths
+
+unfunction bootstrap_plugin_load
+
+############################################################################
+# Start Here
+############################################################################
+
 export SHLOG_LEVEL=1 # Errors only
 
 log_scope_enter "zshenv"
-
-############################################################################
-# Shell Manager
-############################################################################
-
-SHELLMGR_SOURCE=${XDG_DATA_HOME:-${XDG_LOCAL_ROOT}/share}/shellmgr/shellmgr.zsh
-if [[ -f ${SHELLMGR_SOURCE} ]]; then
-    source ${SHELLMGR_SOURCE}
-else
-    echo "Error: shell manager script ${SHELLMGR_SOURCE} not found."
-fi
 
 ############################################################################
 # Basic Environment
@@ -87,19 +94,15 @@ log_scope_enter "paths"
 
 path_append_if_exists /usr/local/bin
 path_append_if_exists /usr/local/sbin
-path_prepend_if_exists ${XDG_LOCAL_ROOT}/bin
+path_prepend_if_exists ${XXDG_LOCAL_ROOT}/bin
 
 man_path_append_if_exists /usr/local/man
 
 log_scope_exit "paths"
 
 ############################################################################
-# Configure directories
+# Configure Zsh directories
 ############################################################################
-
-shellmgr_xdg_init
-
-# Some Zsh directories based on the above:
 
 log_scope_enter "zsh-dirs"
 
@@ -116,15 +119,5 @@ if [[ ! -d ${ZSH_STATE_HOME} ]]; then
 fi
 
 log_scope_exit "zsh-dirs"
-
-############################################################################
-# Shell Manager ...
-############################################################################
-
-shellmgr_homebrew_init
-shellmgr_cargo_init
-
-shellmgr_phase_env
-shellmgr_source_work_env
 
 log_scope_exit "zshenv"
