@@ -36,6 +36,8 @@ cask 'gitkraken-cli'
 cask 'gitfinder'
 cask 'gitbutler'
 
+brew 'gitoxide'                         # Idiomatic, lean, fast & safe pure Rust implementation of Git
+
 brew 'gh'                               # Github command-line interface
 brew 'github-mcp-server'
 mas'  Clone in VS Code', id: 1508732804 # Safari extension, clone from forge to vscode
