@@ -3,6 +3,16 @@
 log_scope_enter zshrc
 
 ############################################################################
+# Core/Standard Environment Variables
+############################################################################
+
+log_scope_enter "basics"
+
+export ARCHFLAGS="-arch $(uname -m)"
+
+log_scope_exit "basics"
+
+############################################################################
 # Plugin Manager (Sheldon)
 ############################################################################
 
@@ -11,18 +21,6 @@ log_scope_enter sheldon
 eval "$(sheldon source)"
 
 log_scope_exit sheldon
-
-############################################################################
-# Common aliases
-############################################################################
-
-log_scope_enter aliases
-
-alias hd='od -tcx1'
-alias myip='curl http://ipecho.net/plain; echo'
-alias todo="find . -type f | xargs grep -n 'TODO:' | $SED $'1i\\\\\nFILE:LINE:MEMO:COMMENT\n' | $SED -r 's/:[ ]+[^T]*/:/' | column -t -s ':'"
-
-log_scope_exit aliases
 
 ############################################################################
 # Completions
@@ -47,45 +45,5 @@ zmodload zsh/curses
 autoload -Uz colors && colors
 
 log_scope_exit completions
-
-############################################################################
-# History
-############################################################################
-
-log_scope_enter history
-
-function he() {
-    # check if we passed any parameters
-    if [ -z "$*" ]; then
-        # if no parameters were passed print entire history
-        history 1
-    else
-        # if words were passed use it as a search
-        history 1 | egrep --color=auto "$@"
-    fi
-}
-
-function hf() {
-    eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
-}
-
-export HISTFILE="${ZSH_STATE_HOME}/history"
-
-export HISTSIZE=10000           # Maximum lines kept in memory
-export SAVEHIST=100000          # Maximum lines saved to ${HISTFILE}
-
-setopt EXTENDED_HISTORY         # Write the history file in the ':start:elapsed;command' format.
-setopt SHARE_HISTORY            # Share history between all sessions.
-setopt HIST_EXPIRE_DUPS_FIRST   # Expire a duplicate event first when trimming history.
-setopt HIST_IGNORE_DUPS         # Do not record an event that was just recorded again.
-setopt HIST_IGNORE_ALL_DUPS     # Delete an old recorded event if a new event is a duplicate.
-setopt HIST_FIND_NO_DUPS        # Do not display a previously found event.
-setopt HIST_IGNORE_SPACE        # Do not record an event starting with a space.
-setopt HIST_SAVE_NO_DUPS        # Do not write a duplicate event to the history file.
-setopt HIST_VERIFY              # Do not execute immediately upon history expansion.
-setopt APPEND_HISTORY           # append to history file
-setopt HIST_NO_STORE            # Don't store history commands
-
-log_scope_exit history
 
 log_scope_exit zshrc
