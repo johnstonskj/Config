@@ -1,31 +1,6 @@
 # -*- mode: sh; eval: (sh-set-shell "zsh") -*-
 
 ############################################################################
-#
-# Zsh startup file sequence:
-#
-# 1. `.zshenv` -- is sourced on all invocations of the shell, unless the
-#    `-f` option is set. It should contain commands to set the command
-#    search path, plus other important environment variables. `.zshenv`
-#    should not contain commands that produce output or assume the shell is
-#    attached to a tty.
-# 2. `.zprofile` -- is similar to `.zlogin`, except that it is sourced
-#    before `.zshrc`. `.zprofile` is meant as an alternative to `.zlogin`
-#    for ksh fans; the two are not intended to be used together, although
-#    this could certainly be done if desired.
-# 3. `.zshrc` -- is sourced in **interactive** shells. It should contain
-#    commands to set up aliases, functions, options, key bindings, etc.
-# 4. `.zlogin` -- is sourced in login shells. It should contain commands
-#    that should be executed only in login shells. `.zlogin` is not the
-#    place for alias definitions, options, environment variable settings,
-#    etc.; as a general rule, it should not change the shell environment at
-#    all. Rather, it should be used to set the terminal type and run a
-#    series of external commands (`fortune`, `msgs`, etc).
-# 5. `.zlogout` -- is sourced when login shells exit.
-#
-############################################################################
-
-############################################################################
 # Bootstrap
 ############################################################################
 
@@ -59,27 +34,7 @@ export SHLOG_LEVEL=1 # Errors only
 
 log_scope_enter "zshenv"
 
-############################################################################
-# Basic Environment
-############################################################################
-
-log_scope_enter "basics"
-
-export ARCHFLAGS="-arch $(uname -m)"
-
-if [[ -n "${SSH_CONNECTION}" ]]; then
-    export EDITOR=vim
-else
-    export EDITOR='emacsclient -nw'
-fi
-
-export PAGER=less
-
-export VISUAL=emacs
-
-log_scope_exit "basics"
-
-############################################################################
+###########################################################################
 # Sessions
 ############################################################################
 
