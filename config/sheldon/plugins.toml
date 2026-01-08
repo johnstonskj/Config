@@ -45,11 +45,41 @@ local = "~/Projects/zsh-eza-plugin"
 [plugins.my-fzf]
 local = "~/Projects/zsh-fzf-plugin"
 
+[plugins.getopt]
+local = "~/Projects/zsh-getopt-plugin"
+
+[plugins.my-git]
+local = "~/Projects/zsh-git-plugin"
+
+[plugins.gnupg]
+local = "~/Projects/zsh-gnupg-plugin"
+
+[plugins.gsed]
+local = "~/Projects/zsh-gsed-plugin"
+
 [plugins.guile]
 local = "~/Projects/zsh-guile-plugin"
 
+[plugins.intelli-shell]
+local = "~/Projects/zsh-intelli_shell-plugin"
+
+[plugins.kiro]
+local = "~/Projects/zsh-kiro-plugin"
+
+[plugins.less]
+local = "~/Projects/zsh-less-plugin"
+
+[plugins.llvm]
+local = "~/Projects/zsh-llvm-plugin"
+
 [plugins.mcfly]
 local = "~/Projects/zsh-mcfly-plugin"
+
+[plugins.openssh]
+local = "~/Projects/zsh-openssh-plugin"
+
+[plugins.orbstack]
+local = "~/Projects/zsh-orbstack-plugin"
 
 [plugins.racket]
 local = "~/Projects/zsh-racket-plugin"
@@ -57,8 +87,23 @@ local = "~/Projects/zsh-racket-plugin"
 [plugins.ruby]
 local = "~/Projects/zsh-ruby-plugin"
 
+[plugins.rust]
+local = "~/Projects/zsh-rust-plugin"
+
+[plugins.rvm]
+local = "~/Projects/zsh-rvm-plugin"
+
 [plugins.starship]
 local = "~/Projects/zsh-starship-plugin"
+
+[plugins.vim]
+local = "~/Projects/zsh-vim-plugin"
+
+[plugins.xcode]
+local = "~/Projects/zsh-xcode-plugin"
+
+[plugins.zoxide]
+local = "~/Projects/zsh-zoxide-plugin"
 
 # Externals:
 

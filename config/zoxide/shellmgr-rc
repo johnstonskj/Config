@@ -1,6 +1,0 @@
-# -*- mode: sh; eval: (sh-set-shell "zsh") -*-
-
-if homebrew_formula_exists zoxide; then
-    shellmgr_command_init zoxide init zsh
-    alias cd=z
-fi

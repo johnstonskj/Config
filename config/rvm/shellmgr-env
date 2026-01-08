@@ -1,6 +1,0 @@
-# -*- mode: sh; eval: (sh-set-shell "zsh") -*-
-
-RVM_HOME="${RVM_HOME:-${HOME}/.rvm}"
-
-path_append_if_exists "${RVM_HOME}/bin"
-source_if_exists "${RVM_HOME}/scripts/rvm"

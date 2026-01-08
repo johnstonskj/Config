@@ -1,8 +1,0 @@
-# -*- mode: sh; eval: (sh-set-shell "zsh") -*-
-
-ORB_HOME="${ORB_HOME:-${HOME}/.orbstack}"
-
-if [[ -d "${ORB_HOME}" ]]; then
-    path_append "${ORB_HOME}/bin"
-    function_path_append_if_exists "/Applications/OrbStack.app/Contents/Resources/completions/zsh"
-fi

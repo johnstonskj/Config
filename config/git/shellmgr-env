@@ -1,5 +1,0 @@
-# -*- mode: sh; eval: (sh-set-shell "zsh") -*-
-
-if homebrew_formula_exists git; then
-    path_append "$(homebrew_formula_prefix git)/bin"
-fi

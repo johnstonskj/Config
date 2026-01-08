@@ -1,5 +1,0 @@
-# -*- mode: sh; eval: (sh-set-shell "zsh") -*-
-
-if homebrew_formula_exists vim; then
-    alias vi='vim'
-fi
