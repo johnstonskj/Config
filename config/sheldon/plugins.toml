@@ -60,6 +60,12 @@ local = "~/Projects/zsh-gsed-plugin"
 [plugins.guile]
 local = "~/Projects/zsh-guile-plugin"
 
+[plugins.hd]
+local = "~/Projects/zsh-hd-plugin"
+
+[plugins.history]
+local = "~/Projects/zsh-history-plugin"
+
 [plugins.intelli-shell]
 local = "~/Projects/zsh-intelli_shell-plugin"
 
@@ -74,6 +80,9 @@ local = "~/Projects/zsh-llvm-plugin"
 
 [plugins.mcfly]
 local = "~/Projects/zsh-mcfly-plugin"
+
+[plugins.myip]
+local = "~/Projects/zsh-myip-plugin"
 
 [plugins.openssh]
 local = "~/Projects/zsh-openssh-plugin"
@@ -95,6 +104,9 @@ local = "~/Projects/zsh-rvm-plugin"
 
 [plugins.starship]
 local = "~/Projects/zsh-starship-plugin"
+
+[plugins.todo]
+local = "~/Projects/zsh-todo-plugin"
 
 [plugins.vim]
 local = "~/Projects/zsh-vim-plugin"
