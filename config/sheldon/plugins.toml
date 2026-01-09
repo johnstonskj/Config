@@ -14,7 +14,10 @@ shell = "zsh"
 
 [plugins]
 
-# My Specials:
+# Bootstrap:
+
+[plugins.zplugins]
+local = "~/Projects/zsh-zplugins-plugin"
 
 [plugins.xdg]
 local = "~/Projects/zsh-xdg-plugin"
@@ -22,11 +25,11 @@ local = "~/Projects/zsh-xdg-plugin"
 [plugins.shlog]
 local = "~/Projects/zsh-shlog-plugin"
 
-[plugins.brew]
-local = "~/Projects/zsh-brew-plugin"
-
 [plugins.paths]
 local = "~/Projects/zsh-paths-plugin"
+
+[plugins.brew]
+local = "~/Projects/zsh-brew-plugin"
 
 # The Rest:
 
@@ -137,6 +140,9 @@ use = ["{{ name }}.zsh"]
 
 [plugins.zsh-syntax-highlighting]
 github = "zsh-users/zsh-syntax-highlighting"
+
+[plugins.zsh-you-should-useb]
+github = "MichaelAquilina/zsh-you-should-use"
 
 # The _maybe_ list:
 # 

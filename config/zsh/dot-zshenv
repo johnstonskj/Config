@@ -20,6 +20,7 @@ bootstrap_plugin_load() {
     fi
 }
 
+bootstrap_plugin_load zplugins
 bootstrap_plugin_load xdg
 bootstrap_plugin_load shlog
 bootstrap_plugin_load paths
