@@ -125,6 +125,7 @@ brew 'nano'                             # Free (GNU) replacement for the Pico te
 
 tap 'd12frosted/emacs-plus'             # Emacs editor with extra features; recommended by Spacemacs and Doom emacs
 brew 'emacs-plus@30'
+brew 'eask-cli'                         # CLI for building, running, testing, and managing your Emacs Lisp dependencies
 
 # ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Vi :( ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
 
