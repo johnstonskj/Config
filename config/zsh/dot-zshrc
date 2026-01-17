@@ -22,28 +22,4 @@ eval "$(sheldon source)"
 
 log_scope_exit sheldon
 
-############################################################################
-# Completions
-############################################################################
-
-log_scope_enter completions
-
-export skip_global_compinit=1
-
-_comp_files=(${ZSH_COMPDUMP}/zcompdump(Nm-20))
-if (( e)); then
-    autoload -Uz compinit -C -d ${ZSH_COMPDUMP}/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}
-else
-    autoload -Uz compinit -d ${ZSH_COMPDUMP}/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}
-fi
-
-zmodload zsh/complist
-
-autoload -Uz compinit && compinit
-
-zmodload zsh/curses
-autoload -Uz colors && colors
-
-log_scope_exit completions
-
 log_scope_exit zshrc

@@ -39,6 +39,9 @@ local = "~/Projects/zsh-bat-plugin"
 [plugins.cargo]
 local = "~/Projects/zsh-cargo-plugin"
 
+[plugins.my-completion]
+local = "~/Projects/zsh-completion-plugin"
+
 [plugins.my-emacs]
 local = "~/Projects/zsh-emacs-plugin"
 
