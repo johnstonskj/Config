@@ -102,6 +102,7 @@ Note, plugin names in bold are *bootstrap* plugins, these are actually sourced e
 | [`bat`](https://github.com/johnstonskj/zsh-bat-plugin)                     | Simple environment setup for using `bat` as a cat replacement.                        |
 | [`brew`](https://github.com/johnstonskj/zsh-brew-plugin)                   | Simple environment setup for using `brew` as a package manager.                       |
 | [`cargo`](https://github.com/johnstonskj/zsh-cargo-plugin)                 | Simple environment setup for using `cargo` as a package manager.                      |
+| [`cargo`](https://github.com/johnstonskj/zsh-cargo-plugin)                 | Zsh plugin to setup core Zsh completion.                                              |
 | [`emacs`](https://github.com/johnstonskj/zsh-emacs-plugin)                 | Simple environment setup for using `emacs` as primary editor.                         |
 | [`eza`](https://github.com/johnstonskj/zsh-eza-plugin)                     | Simple plugin to set up aliases for the `eza` command, a modern replacement for `ls`. |
 | [`fzf`](https://github.com/johnstonskj/zsh-fzf-plugin)                     | Zsh plugin to integrate the fzf tool into Zsh.                                        |
@@ -136,6 +137,45 @@ Note, plugin names in bold are *bootstrap* plugins, these are actually sourced e
 
 ### Plugin zplugins
 
+This implements *some* of the functionality of a plug-in manager, specifically looking for any `bin` or `functions` subdirectory and tracking aliases, functions, and
+custom `path` and `fpath` entries. This greatly simplifies writing a plugin as can be shown in the following listing.
+
+```bash
+# -*- mode: sh; eval: (sh-set-shell "zsh") -*-
+#
+# Name: example
+# Description: Zsh plugin to show a zplugins plugin.
+#
+
+# Standard Setup Behavior
+
+0="$(@zplugin_normalize_zero "${0}")"
+@zplugin_declare_global example "${0}"
+
+# Plugin Lifecycle
+
+example_plugin_init() {
+    builtin emulate -L zsh
+    builtin setopt extended_glob warn_create_global typeset_silent no_short_loops rc_quotes no_auto_pushd
+
+    @zplugin_register example
+}
+@zplugin_remember_fn completion_plugin_init
+
+example_plugin_unload() {
+    builtin emulate -L zsh
+
+    @zplugin_unregister example
+    unfunction example_plugin_unload
+}
+
+# Plugin Initialization
+
+example_plugin_init
+
+true
+```
+
 ### Plugin xdg
 
 ### Plugin shlog
@@ -163,6 +203,87 @@ zsh ─┬─> │ .zshenv │ ─┼─> │ .zprofile │ ─┼─> │ .zshr
 3. `.zshrc` is sourced in **interactive** shells. It should contain commands to set up aliases, functions, options, key bindings, etc.
 4. `.zlogin` is sourced in login shells. It should contain commands that should be executed only in login shells. `.zlogin` is not the place for alias definitions, options, environment variable settings, etc.; as a general rule, it should not change the shell environment at all. Rather, it should be used to set the terminal type and run a series of external commands (`fortune`, `msgs`, etc).
 5. `.zlogout` is sourced when login shells exit.
+
+Effective `.zshenv`
+
+```bash
+export ZDOTDIR=${ZDOTDIR:-${HOME}}
+
+export XXDG_PROJECT_HOME=${XDG_PROJECT_HOME:-${HOME}/Projects}
+export XXDG_LOCAL_ROOT=${HOME}/.local
+
+bootstrap_plugin_load() {
+    local plugin_name="${1}"
+    local plugin_path="${XXDG_PROJECT_HOME}/zsh-${plugin_name}-plugin/${plugin_name}.plugin.zsh"
+
+    if [[ -f ${plugin_path} ]]; then
+        source ${plugin_path}
+    else
+        echo "Error: shell manager script ${plugin_path} not found."
+    fi
+}
+
+bootstrap_plugin_load zplugins
+bootstrap_plugin_load xdg
+bootstrap_plugin_load shlog
+bootstrap_plugin_load paths
+
+unfunction bootstrap_plugin_load
+
+export SHLOG_LEVEL=1 # Errors only
+
+# Sessions
+
+export SHELL_SESSIONS_DISABLE=1
+
+# Top-level paths
+
+path_append_if_exists /usr/local/bin
+path_append_if_exists /usr/local/sbin
+path_prepend_if_exists ${XXDG_LOCAL_ROOT}/bin
+
+man_path_append_if_exists /usr/local/man
+
+# Configure Zsh directories
+
+export ZSH_CACHE_HOME=$(xdg_cache_for zsh)
+if [[ ! -d ${ZSH_CACHE_HOME} ]]; then
+    mkdir -p ${ZSH_CACHE_HOME}
+fi
+
+export ZSH_COMPDUMP="${ZSH_CACHE_HOME}/zcompdump"
+if [[ ! -d ${ZSH_COMPDUMP} ]]; then
+    mkdir -p ${ZSH_COMPDUMP}
+fi
+
+export ZSH_STATE_HOME=$(xdg_state_for zsh)
+if [[ ! -d ${ZSH_STATE_HOME} ]]; then
+    mkdir -p ${ZSH_STATE_HOME}
+fi
+```
+
+Effective `.zlogin`
+
+```bash
+# -*- mode: sh; eval: (sh-set-shell "zsh") -*-
+
+export LC_ALL=en_US.UTF-8
+export TERM="xterm-256color"
+```
+
+Effective `.zshrc`
+
+```bash
+# -*- mode: sh; eval: (sh-set-shell "zsh") -*-
+
+# Core/Standard Environment Variables
+
+export ARCHFLAGS="-arch $(uname -m)"
+
+# Plugin Manager (Sheldon)
+
+eval "$(sheldon source)"
+```
 
 ### Sheldon
 
