@@ -103,3 +103,5 @@ mas  'Soulver 3', id: 1508732804        # Fancy-ass calculator, converter and mo
 mas  'MathStudio', id: 829912893        # Simple CAS for Mac
 
 cask 'claude', adopt: true              # Anthropic's official Claude AI desktop app
+
+cask 'eigent'                           # AI workforce on desktop automates your operations in any scenarios

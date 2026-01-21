@@ -56,6 +56,8 @@ cask 'xquartz'                          # Xquartz X.Org X Window System that run
 brew 'atac'                             # Simple API client (Postman-like) in your terminal
 brew 'hyperfine'                        # Command-line benchmarking tool
 
+cask 'codeql'                           # GitHub's CodeQL - Semantic code analysis engine
+
 # cask 'charles'                        # Enables a developer to view HTTP traffic
 # cask 'insomnia'                       # REST client for API testing
 # cask 'postman'                        # A complete API Development Environment
@@ -168,15 +170,6 @@ mas  'Xcode', id: 497799835             # Xcode, full installation
 cask 'github-copilot-for-xcode'
 brew 'carthage'                         # Carthage Xcode project dependency manager
 
-cask 'claude-code'                      # Terminal-based AI coding assistant
-brew 'claude-cmd'
-brew 'claude-hooks'
-brew 'claudekit'
-
-                                        
-mas  'SnailGit – Git for Finder',       # Finder extension to use Git
-     id: 847260112
-
 cask 'jupyterlab-app'
 
 mas  'Swift Playground', id: 1496833156
@@ -184,6 +177,44 @@ mas  'Swifter for SwiftUI', id: 1621133381
 mas  'DetailsPro', id: 1524366536       # Design tool for SwiftUI
 
 mas  'ScriptWidget', id: 1555600758     # Make iOS and macOS widgets in JavaScript
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Finder Integration ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
+mas  'SnailGit – Git for Finder',       # Finder extension to use Git
+     id: 847260112
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ AI Agents ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Aider-AI:
+
+brew 'aider'                            # AI pair programming in your terminal
+cask 'hotovo-aider-desk'                # Desktop app for aider assistant
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Anthropic Claude:
+
+cask 'claude-code'                      # Terminal-based AI coding assistant
+brew 'claude-cmd'
+brew 'claude-hooks'
+brew 'claudekit'
+
+brew 'claude-code-templates'            # CLI tool for configuring and monitoring Claude Code
+cask 'auto-claude'                      # Autonomous multi-session AI coding
+cask 'claudebar'                        # Menu bar app for monitoring AI coding assistant usage quotas
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Google Gemini:
+
+cask 'gemini-cli'                       # Interact with Google Gemini AI models from the command-line
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ OpenAI Codex:
+
+cask 'codex'                            # OpenAI's coding agent that runs in your terminal
+vscode 'openai.chatgpt'                 # 
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ OpenCode:
+
+tap  'anomalyco/tap'
+brew 'opencode'                         # AI coding agent, built for the terminal
+cask 'opencode-desktop'                 # AI coding agent desktop client
 
 # ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Database Development ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
 
