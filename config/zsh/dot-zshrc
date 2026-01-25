@@ -13,13 +13,13 @@ export ARCHFLAGS="-arch $(uname -m)"
 log_scope_exit "basics"
 
 ############################################################################
-# Plugin Manager (Sheldon)
+# Plugin Management (zplugins & Sheldon)
 ############################################################################
 
-log_scope_enter sheldon
+log_scope_enter plugins
 
-eval "$(sheldon source)"
+@zplugins_load_all_from_sheldon
 
-log_scope_exit sheldon
+log_scope_exit plugins
 
 log_scope_exit zshrc
