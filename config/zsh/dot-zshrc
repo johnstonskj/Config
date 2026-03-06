@@ -6,11 +6,11 @@ log_scope_enter zshrc
 # Core/Standard Environment Variables
 ############################################################################
 
-log_scope_enter "basics"
+log_scope_enter "archflags"
 
 export ARCHFLAGS="-arch $(uname -m)"
 
-log_scope_exit "basics"
+log_scope_exit "archflags"
 
 ############################################################################
 # Plugin Management (zplugins & Sheldon)
@@ -54,7 +54,17 @@ zplugins+=(
 
 log_scope_exit plugins
 
-log_scope_exit zshrc
+############################################################################
+# Set PROMPT and corresponding variables
+############################################################################
+
+log_scope_enter prompt
+
+eval "$(starship init zsh)"
+
+log_scope_exit prompt
 
 # Added by Antigravity
 export PATH="/Users/johnstonskj/.antigravity/antigravity/bin:$PATH"
+
+log_scope_exit zshrc

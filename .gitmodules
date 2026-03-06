@@ -1,111 +1,108 @@
-[submodule "config/fzf/fzf-git.sh"]
-	path = config/fzf/fzf-git.sh
-	url = https://github.com/junegunn/fzf-git.sh.git
 [submodule "local/share/zsh/plugins/zsh-bat-plugin"]
 	path = local/share/zsh/plugins/zsh-bat-plugin
-	url = https://github.com/johnstonskj/zsh-bat-plugin.git
+	url = https://github.com/johnstonskj/zsh-bat-plugin
 [submodule "local/share/zsh/plugins/zsh-brew-plugin"]
 	path = local/share/zsh/plugins/zsh-brew-plugin
-	url = https://github.com/johnstonskj/zsh-brew-plugin.git
+	url = https://github.com/johnstonskj/zsh-brew-plugin
 [submodule "local/share/zsh/plugins/zsh-cargo-plugin"]
 	path = local/share/zsh/plugins/zsh-cargo-plugin
-	url = https://github.com/johnstonskj/zsh-cargo-plugin.git
+	url = https://github.com/johnstonskj/zsh-cargo-plugin
 [submodule "local/share/zsh/plugins/zsh-completion-plugin"]
 	path = local/share/zsh/plugins/zsh-completion-plugin
-	url = https://github.com/johnstonskj/zsh-completion-plugin.git
+	url = https://github.com/johnstonskj/zsh-completion-plugin
 [submodule "local/share/zsh/plugins/zsh-emacs-plugin"]
 	path = local/share/zsh/plugins/zsh-emacs-plugin
-	url = https://github.com/johnstonskj/zsh-emacs-plugin.git
+	url = https://github.com/johnstonskj/zsh-emacs-plugin
 [submodule "local/share/zsh/plugins/zsh-eza-plugin"]
 	path = local/share/zsh/plugins/zsh-eza-plugin
-	url = https://github.com/johnstonskj/zsh-eza-plugin.git
+	url = https://github.com/johnstonskj/zsh-eza-plugin
 [submodule "local/share/zsh/plugins/zsh-fzf-plugin"]
 	path = local/share/zsh/plugins/zsh-fzf-plugin
-	url = https://github.com/johnstonskj/zsh-fzf-plugin.git
+	url = https://github.com/johnstonskj/zsh-fzf-plugin
 [submodule "local/share/zsh/plugins/zsh-getopt-plugin"]
 	path = local/share/zsh/plugins/zsh-getopt-plugin
-	url = https://github.com/johnstonskj/zsh-getopt-plugin.git
+	url = https://github.com/johnstonskj/zsh-getopt-plugin
 [submodule "local/share/zsh/plugins/zsh-gh-plugin"]
 	path = local/share/zsh/plugins/zsh-gh-plugin
-	url = https://github.com/johnstonskj/zsh-gh-plugin.git
+	url = https://github.com/johnstonskj/zsh-gh-plugin
 [submodule "local/share/zsh/plugins/zsh-git-plugin"]
 	path = local/share/zsh/plugins/zsh-git-plugin
-	url = https://github.com/johnstonskj/zsh-git-plugin.git
+	url = https://github.com/johnstonskj/zsh-git-plugin
 [submodule "local/share/zsh/plugins/zsh-gnupg-plugin"]
 	path = local/share/zsh/plugins/zsh-gnupg-plugin
-	url = https://github.com/johnstonskj/zsh-gnupg-plugin.git
+	url = https://github.com/johnstonskj/zsh-gnupg-plugin
 [submodule "local/share/zsh/plugins/zsh-gsed-plugin"]
 	path = local/share/zsh/plugins/zsh-gsed-plugin
-	url = https://github.com/johnstonskj/zsh-gsed-plugin.git
+	url = https://github.com/johnstonskj/zsh-gsed-plugin
 [submodule "local/share/zsh/plugins/zsh-guile-plugin"]
 	path = local/share/zsh/plugins/zsh-guile-plugin
-	url = https://github.com/johnstonskj/zsh-guile-plugin.git
+	url = https://github.com/johnstonskj/zsh-guile-plugin
 [submodule "local/share/zsh/plugins/zsh-hd-plugin"]
 	path = local/share/zsh/plugins/zsh-hd-plugin
-	url = https://github.com/johnstonskj/zsh-hd-plugin.git
+	url = https://github.com/johnstonskj/zsh-hd-plugin
 [submodule "local/share/zsh/plugins/zsh-history-plugin"]
 	path = local/share/zsh/plugins/zsh-history-plugin
-	url = https://github.com/johnstonskj/zsh-history-plugin.git
+	url = https://github.com/johnstonskj/zsh-history-plugin
 [submodule "local/share/zsh/plugins/zsh-intelli_shell-plugin"]
 	path = local/share/zsh/plugins/zsh-intelli_shell-plugin
-	url = https://github.com/johnstonskj/zsh-intelli_shell-plugin.git
+	url = https://github.com/johnstonskj/zsh-intelli_shell-plugin
 [submodule "local/share/zsh/plugins/zsh-kiro-plugin"]
 	path = local/share/zsh/plugins/zsh-kiro-plugin
-	url = https://github.com/johnstonskj/zsh-kiro-plugin.git
+	url = https://github.com/johnstonskj/zsh-kiro-plugin
 [submodule "local/share/zsh/plugins/zsh-less-plugin"]
 	path = local/share/zsh/plugins/zsh-less-plugin
-	url = https://github.com/johnstonskj/zsh-less-plugin.git
+	url = https://github.com/johnstonskj/zsh-less-plugin
 [submodule "local/share/zsh/plugins/zsh-llvm-plugin"]
 	path = local/share/zsh/plugins/zsh-llvm-plugin
-	url = https://github.com/johnstonskj/zsh-llvm-plugin.git
+	url = https://github.com/johnstonskj/zsh-llvm-plugin
 [submodule "local/share/zsh/plugins/zsh-mcfly-plugin"]
 	path = local/share/zsh/plugins/zsh-mcfly-plugin
-	url = https://github.com/johnstonskj/zsh-mcfly-plugin.git
+	url = https://github.com/johnstonskj/zsh-mcfly-plugin
 [submodule "local/share/zsh/plugins/zsh-myip-plugin"]
 	path = local/share/zsh/plugins/zsh-myip-plugin
-	url = https://github.com/johnstonskj/zsh-myip-plugin.git
+	url = https://github.com/johnstonskj/zsh-myip-plugin
 [submodule "local/share/zsh/plugins/zsh-openssh-plugin"]
 	path = local/share/zsh/plugins/zsh-openssh-plugin
-	url = https://github.com/johnstonskj/zsh-openssh-plugin.git
+	url = https://github.com/johnstonskj/zsh-openssh-plugin
 [submodule "local/share/zsh/plugins/zsh-orbstack-plugin"]
 	path = local/share/zsh/plugins/zsh-orbstack-plugin
-	url = https://github.com/johnstonskj/zsh-orbstack-plugin.git
+	url = https://github.com/johnstonskj/zsh-orbstack-plugin
 [submodule "local/share/zsh/plugins/zsh-paths-plugin"]
 	path = local/share/zsh/plugins/zsh-paths-plugin
-	url = https://github.com/johnstonskj/zsh-paths-plugin.git
+	url = https://github.com/johnstonskj/zsh-paths-plugin
 [submodule "local/share/zsh/plugins/zsh-racket-plugin"]
 	path = local/share/zsh/plugins/zsh-racket-plugin
-	url = https://github.com/johnstonskj/zsh-racket-plugin.git
+	url = https://github.com/johnstonskj/zsh-racket-plugin
 [submodule "local/share/zsh/plugins/zsh-ruby-plugin"]
 	path = local/share/zsh/plugins/zsh-ruby-plugin
-	url = https://github.com/johnstonskj/zsh-ruby-plugin.git
+	url = https://github.com/johnstonskj/zsh-ruby-plugin
 [submodule "local/share/zsh/plugins/zsh-rust-plugin"]
 	path = local/share/zsh/plugins/zsh-rust-plugin
-	url = https://github.com/johnstonskj/zsh-rust-plugin.git
+	url = https://github.com/johnstonskj/zsh-rust-plugin
 [submodule "local/share/zsh/plugins/zsh-rvm-plugin"]
 	path = local/share/zsh/plugins/zsh-rvm-plugin
-	url = https://github.com/johnstonskj/zsh-rvm-plugin.git
+	url = https://github.com/johnstonskj/zsh-rvm-plugin
 [submodule "local/share/zsh/plugins/zsh-shlog-plugin"]
 	path = local/share/zsh/plugins/zsh-shlog-plugin
-	url = https://github.com/johnstonskj/zsh-shlog-plugin.git
+	url = https://github.com/johnstonskj/zsh-shlog-plugin
 [submodule "local/share/zsh/plugins/zsh-starship-plugin"]
 	path = local/share/zsh/plugins/zsh-starship-plugin
-	url = https://github.com/johnstonskj/zsh-starship-plugin.git
+	url = https://github.com/johnstonskj/zsh-starship-plugin
 [submodule "local/share/zsh/plugins/zsh-todo-plugin"]
 	path = local/share/zsh/plugins/zsh-todo-plugin
-	url = https://github.com/johnstonskj/zsh-todo-plugin.git
+	url = https://github.com/johnstonskj/zsh-todo-plugin
 [submodule "local/share/zsh/plugins/zsh-vim-plugin"]
 	path = local/share/zsh/plugins/zsh-vim-plugin
-	url = https://github.com/johnstonskj/zsh-vim-plugin.git
+	url = https://github.com/johnstonskj/zsh-vim-plugin
 [submodule "local/share/zsh/plugins/zsh-xcode-plugin"]
 	path = local/share/zsh/plugins/zsh-xcode-plugin
-	url = https://github.com/johnstonskj/zsh-xcode-plugin.git
+	url = https://github.com/johnstonskj/zsh-xcode-plugin
 [submodule "local/share/zsh/plugins/zsh-xdg-plugin"]
 	path = local/share/zsh/plugins/zsh-xdg-plugin
-	url = https://github.com/johnstonskj/zsh-xdg-plugin.git
+	url = https://github.com/johnstonskj/zsh-xdg-plugin
 [submodule "local/share/zsh/plugins/zsh-zoxide-plugin"]
 	path = local/share/zsh/plugins/zsh-zoxide-plugin
-	url = https://github.com/johnstonskj/zsh-zoxide-plugin.git
+	url = https://github.com/johnstonskj/zsh-zoxide-plugin
 [submodule "local/share/zsh/plugins/zsh-zplugins-plugin"]
 	path = local/share/zsh/plugins/zsh-zplugins-plugin
-	url = https://github.com/johnstonskj/zsh-zplugins-plugin.git
+	url = https://github.com/johnstonskj/zsh-zplugins-plugin

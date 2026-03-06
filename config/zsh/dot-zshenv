@@ -9,9 +9,9 @@ export ZDOTDIR=${ZDOTDIR:-${HOME}}
 export XXDG_PROJECT_HOME=${XDG_PROJECT_HOME:-${HOME}/Projects}
 export XXDG_LOCAL_ROOT=${HOME}/.local
 
-ZPLUGINS_PLUGIN_HOME=${XXDG_PROJECT_HOME}
+ZPLUGINS_PLUGIN_HOME=${XDG_DATA_HOME:-${HOME}/.local/share}/zsh/plugins
 ZPLUGINS_LOG=1
-source "${XXDG_PROJECT_HOME}/zsh-zplugins-plugin/zplugins.plugin.zsh"
+source "${ZPLUGINS_PLUGIN_HOME}/zsh-zplugins-plugin/zplugins.plugin.zsh"
 
 zplugins=(xdg shlog paths brew)
 

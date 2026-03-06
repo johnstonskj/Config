@@ -9,5 +9,5 @@
 !/lftp
 !/shellmgr
 !/uv
-!/zsh/.gitkeep
-!/zsh/plugins
+!/zsh
+!/zsh/plugins/**/*
