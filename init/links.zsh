@@ -62,6 +62,7 @@ LINKMAP=(
     "${HOME}/.vimrc" "config/vim/dot-vimrc"
     "${HOME}/.viminfo" "local/state/vim/.viminfo"
     "${HOME}/.vscode" "local/state/vscode"
+    "${HOME}/.wakatime" "local/state/wakatime"
     "${HOME}/.wakatime.cfg" "config/wakatime/wakatime.cfg"
     "${HOME}/.zlogin" "config/zsh/dot-zlogin"
     "${HOME}/.zshenv" "config/zsh/dot-zshenv"
