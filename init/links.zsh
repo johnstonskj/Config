@@ -40,6 +40,7 @@ function check_or_make_all() {
 LINKMAP=(
     "${HOME}/.bash_profile" "config/bash/dot-bash_profile"
     "${HOME}/.bashrc" "config/bash/dot-bashrc"
+    "${HOME}/.boto" "config/boto/dot-boto"
     "${HOME}/.cache" "cache"
     "${HOME}/.cargo" "local/state/cargo"
     "${HOME}/.claude" "local/state/claude"
@@ -59,6 +60,7 @@ LINKMAP=(
     "${HOME}/.tmux.conf" "config/tmux/dot-tmux.conf"
     "${HOME}/.vim" "config/vim"
     "${HOME}/.vimrc" "config/vim/dot-vimrc"
+    "${HOME}/.viminfo" "local/state/vim/.viminfo"
     "${HOME}/.vscode" "local/state/vscode"
     "${HOME}/.wakatime.cfg" "config/wakatime/wakatime.cfg"
     "${HOME}/.zlogin" "config/zsh/dot-zlogin"

@@ -1,0 +1,115 @@
+#!/usr/bin/env zsh
+
+function uname_system_family() {
+    local system="$(uname -s)"
+
+    case "${system}" in
+        AIX|DragonFly|FreeBSD|Haiku|Interix|MidnightBSD|Minix|NetBSD|OpenBSD|OS400|OSF1|QNX|SunOS|ULTRIX)
+            printf '%s' ${system:l} ;;
+        A/UX)
+            printf 'aux' ;;
+        CYGWIN*)
+            printf 'windows_cygwin' ;;
+        Darwin)
+            printf 'macos' ;;
+        GNU)
+            printf 'gnu_hurd' ;;
+        GNU/kFreeBSD)_
+            printf 'freebsd' ;;
+        HP-UX)
+            printf 'hpux' ;;
+        IRIX)
+            printf 'irix32' ;;
+        IRIX64)
+            printf 'irix64' ;;
+        Linux*)
+            printf 'linux_gnu' ;;
+        MINGW*)
+            printf 'windows_mingw' ;;
+        MS-DOS)
+            printf 'msdos' ;;
+        MSYS_*)
+            printf 'windows_msys' ;;
+        NONSTOP_KERNEL)
+            printf 'nonstop' ;;
+        OS/390)
+            printf 'os390' ;;
+        SCO_SV)
+            printf 'sco' ;;
+        sn5176)
+            printf 'unicos' ;;
+        UWIN-W7)
+            printf 'windows_uwin' ;;
+        WindowsNT|Windows\ NT|Windows_NT)
+            printf 'windows' ;;
+        *)
+            printf 'unknown' ;;
+    esac
+}
+
+function uname_machine_family() {
+    local machine="$(uname -m)"
+
+    case "${machine}" in
+        aarch64|arm64|ppc|ppc64|sparc64|x86_64)
+            printf '%s' ${machine:l} ;;
+        armv[123456789]*)
+            printf '%s' ${machine::5} ;;
+        CRAY\ Y-MP)
+            printf 'cray_ymp' ;;
+        i[36]86)
+            printf '%s' ${machine::4} ;;
+        i686-64)
+            printf '%s' ${machine:gs/-/_} ;;
+        IP22|IP30|IP35)
+            printf 'mips' ;;
+        mc68030)
+            printf 'mc68000' ;;
+        Pentium)
+            printf 'i686' ;;
+        riscv*)
+            printf '%s' ${machine} ;;
+        VAX|vax-*)
+            printf 'vax' ;;
+        *)
+            printf 'unknown' ;;
+    esac
+}
+
+while (( $# > 0 )); do
+    case "${1}" in
+        -s|--system)
+            uname_system_family
+            exit 0
+            ;;
+        -m|--machine)
+            uname_machine_family
+            exit 0
+            ;;
+        -a|--all)
+            echo "$(uname_system_family)-$(uname_machine_family)"
+            exit 0
+            ;;
+        -e|--export)
+            echo "export SYSTEM_FAMILY=$(uname_system_family)"
+            echo "export MACHINE_FAMILY=$(uname_machine_family)"
+            exit 0
+            ;;
+        -h|--help)
+            echo "muname [options]"
+            echo ""
+            echo "    -h | --help      This help"
+            echo "    -m | --machine   The machine family"
+            echo "    -s | --system    The system family"
+            echo "    -e | --export    Export families as SYSTEM_FAMILY and MACHINE_FAMILY"
+            echo "    -a | --all       The system and machine families"
+            exit 0
+            ;;
+        *)
+            echo "Unknown option '$1', try -h for help"
+            exit 1
+            ;;
+    esac
+    shift
+done
+
