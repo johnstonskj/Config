@@ -139,11 +139,12 @@ if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
-" try
-"     set background=light
-"     colorscheme solarized
-" catch
-" endtry
+if $COLORTERM == 'truecolor'
+    set termguicolors
+endif
+
+set background=light
+colorscheme solarized8
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -330,6 +331,13 @@ map <leader>pp :setlocal paste!<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins (vim-plug)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+    silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin()
 " The default plugin directory will be as follows:
 "   - Vim (Linux/macOS): '~/.vim/plugged'
@@ -339,12 +347,76 @@ call plug#begin()
 "   - e.g. `call plug#begin('~/.vim/plugged')`
 "   - Avoid using standard Vim directory names like 'plugin'
 
-" Make sure you use single quotes
+" => External Tool Integrations
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 Plug 'wakatime/vim-wakatime'
 
-" Initialize plugin system
+" => IDE Tooling
+
+Plug 'airblade/vim-gitgutter'
+
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
+
+Plug 'jreybert/vimagit'
+
+Plug 'scrooloose/syntastic'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'olical/conjure'
+
+Plug 'vim-test/vim-test'
+
+Plug 'preservim/tagbar'
+
+Plug 'jelera/vim-javascript-syntax'
+Plug 'elzr/vim-json'
+Plug 'plasticboy/vim-markdown'
+Plug 'klen/python-mode'
+Plug 'wlangstroth/vim-racket'
+Plug 'rust-lang/rust.vim'
+Plug 'leafgarland/typescript-vim'
+
+" => Editing Improvements
+
+Plug 'houtsnip/vim-emacscommandline'
+
+Plug 'tpope/vim-surround'
+
+Plug 'luochen1990/rainbow'
+
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+
+Plug 'bronson/vim-trailing-whitespace'
+
+" => UI Improvements
+
+Plug 'flazz/vim-colorschemes'
+
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+Plug 'yggdroot/indentline'
+
+Plug 'itchyny/lightline.vim'
+
 call plug#end()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin Configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:lightline = {
+      \ 'colorscheme': 'solarized8',
+      \ }
+
+set background=light
+colorscheme solarized8
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions

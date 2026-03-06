@@ -1,0 +1,25 @@
+# Ignore everything in this directory, and sub-directories
+**/*
+
+# Except these files/directories
+!/.gitignore
+!/bash
+!/bat
+!/dart
+!/fd
+!/fzf
+!/gcloud
+!/gh
+!/git
+!/homebrew
+!/kitty
+!/rust
+!/sheldon
+!/starship
+!/tmux
+!/user-dirs.conf
+!/user-dirs.dirs
+!/vim
+!/wakatime
+!/xcode
+!/zsh
