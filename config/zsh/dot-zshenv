@@ -9,23 +9,13 @@ export ZDOTDIR=${ZDOTDIR:-${HOME}}
 export XXDG_PROJECT_HOME=${XDG_PROJECT_HOME:-${HOME}/Projects}
 export XXDG_LOCAL_ROOT=${HOME}/.local
 
-bootstrap_plugin_load() {
-    local plugin_name="${1}"
-    local plugin_path="${XXDG_PROJECT_HOME}/zsh-${plugin_name}-plugin/${plugin_name}.plugin.zsh"
+ZPLUGINS_PLUGIN_HOME=${XXDG_PROJECT_HOME}
+ZPLUGINS_LOG=1
+source "${XXDG_PROJECT_HOME}/zsh-zplugins-plugin/zplugins.plugin.zsh"
 
-    if [[ -f ${plugin_path} ]]; then
-        source ${plugin_path}
-    else
-        echo "Error: shell manager script ${plugin_path} not found."
-    fi
-}
+zplugins=(xdg shlog paths brew)
 
-bootstrap_plugin_load zplugins
-bootstrap_plugin_load xdg
-bootstrap_plugin_load shlog
-bootstrap_plugin_load paths
-
-unfunction bootstrap_plugin_load
+@zplugins_load_all
 
 ############################################################################
 # Start Here

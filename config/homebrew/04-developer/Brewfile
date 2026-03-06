@@ -201,9 +201,14 @@ brew 'claude-code-templates'            # CLI tool for configuring and monitorin
 cask 'auto-claude'                      # Autonomous multi-session AI coding
 cask 'claudebar'                        # Menu bar app for monitoring AI coding assistant usage quotas
 
-# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Google Gemini:
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ GitHub Copilot:
 
-cask 'gemini-cli'                       # Interact with Google Gemini AI models from the command-line
+brew 'copilot-cli'
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Google Gemini/Antigravity:
+
+brew 'gemini-cli'                       # Interact with Google Gemini AI models from the command-line
+cask 'antigravity'                      # AI Coding Agent IDE
 
 # ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ OpenAI Codex:
 
@@ -213,7 +218,7 @@ vscode 'openai.chatgpt'                 #
 # ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ OpenCode:
 
 tap  'anomalyco/tap'
-brew 'opencode'                         # AI coding agent, built for the terminal
+brew 'anomalyco/tap/opencode'           # AI coding agent, built for the terminal
 cask 'opencode-desktop'                 # AI coding agent desktop client
 
 # ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Database Development ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯

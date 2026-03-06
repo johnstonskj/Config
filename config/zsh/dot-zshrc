@@ -18,8 +18,43 @@ log_scope_exit "basics"
 
 log_scope_enter plugins
 
-@zplugins_load_all_from_sheldon
+zplugins+=(
+    bat
+    cargo completion
+    emacs
+    eza
+    fzf
+    getopt
+    git
+    gnupg
+    gsed
+    guile
+    hd
+    history
+    intelli_shell
+    kiro
+    less
+    llvm
+    mcfly
+    myip
+    openssh
+    orbstack
+    racket
+    ruby
+    rust
+    rvm
+    starship
+    todo
+    vim
+    xcode
+    zoxide
+)
+
+@zplugins_load_all
 
 log_scope_exit plugins
 
 log_scope_exit zshrc
+
+# Added by Antigravity
+export PATH="/Users/johnstonskj/.antigravity/antigravity/bin:$PATH"
