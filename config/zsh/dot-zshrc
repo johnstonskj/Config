@@ -64,7 +64,4 @@ eval "$(starship init zsh)"
 
 log_scope_exit prompt
 
-# Added by Antigravity
-export PATH="/Users/johnstonskj/.antigravity/antigravity/bin:$PATH"
-
 log_scope_exit zshrc

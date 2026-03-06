@@ -106,3 +106,6 @@
 [submodule "local/share/zsh/plugins/zsh-zplugins-plugin"]
 	path = local/share/zsh/plugins/zsh-zplugins-plugin
 	url = https://github.com/johnstonskj/zsh-zplugins-plugin
+[submodule "local/share/zsh/plugins/zsh-antigravity-plugin"]
+	path = local/share/zsh/plugins/zsh-antigravity-plugin
+	url = https://github.com/johnstonskj/zsh-antigravity-plugin.git
