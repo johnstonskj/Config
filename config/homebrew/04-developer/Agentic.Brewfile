@@ -4,8 +4,8 @@
 
 # ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Aider-AI:
 
-brew 'aider'                            # AI pair programming in your terminal
-cask 'hotovo-aider-desk'                # Desktop app for aider assistant
+# brew 'aider'                            # AI pair programming in your terminal
+# cask 'hotovo-aider-desk'                # Desktop app for aider assistant
 
 # ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Anthropic Claude:
 
@@ -29,8 +29,8 @@ vscode 'openai.chatgpt'                 #
 
 # ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ OpenCode:
 
-tap  'anomalyco/tap'
-brew 'opencode'                         # AI coding agent, built for the terminal
-cask 'opencode-desktop'                 # AI coding agent desktop client
+# tap  'anomalyco/tap'
+# brew 'opencode'                         # AI coding agent, built for the terminal
+# cask 'opencode-desktop'                 # AI coding agent desktop client
 
 
