@@ -18,8 +18,9 @@ log_scope_exit "archflags"
 
 log_scope_enter plugins
 
-zplugins+=(
+zplugins=(
     bat
+    brew
     cargo completion
     emacs
     eza
@@ -37,6 +38,7 @@ zplugins+=(
     llvm
     mcfly
     myip
+    nix
     openssh
     orbstack
     racket

@@ -112,3 +112,6 @@
 [submodule "config/fzf/fzf-git.sh"]
 	path = config/fzf/fzf-git.sh
 	url = https://github.com/junegunn/fzf-git.sh
+[submodule "local/share/zsh/plugins/zsh-nix-plugin"]
+	path = local/share/zsh/plugins/zsh-nix-plugin
+	url = https://github.com/johnstonskj/zsh-nix-plugin

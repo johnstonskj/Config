@@ -10,12 +10,9 @@ export XXDG_PROJECT_HOME=${XDG_PROJECT_HOME:-${HOME}/Projects}
 export XXDG_LOCAL_ROOT=${HOME}/.local
 
 ZPLUGINS_PLUGIN_HOME=${XDG_DATA_HOME:-${HOME}/.local/share}/zsh/plugins
-ZPLUGINS_LOG=1 # Errors only
 source "${ZPLUGINS_PLUGIN_HOME}/zsh-zplugins-plugin/zplugins.plugin.zsh"
 
-zplugins=(xdg shlog paths brew)
-
-@zplugins_load_all
+@zplugins_load_bootstrap_plugins
 
 ############################################################################
 # Start Here
