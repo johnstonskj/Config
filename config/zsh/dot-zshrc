@@ -62,6 +62,8 @@ log_scope_exit plugins
 
 log_scope_enter prompt
 
+eval "$(zoxide init zsh)"
+
 eval "$(starship init zsh)"
 
 log_scope_exit prompt
