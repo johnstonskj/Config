@@ -1,0 +1,8 @@
+# Ignore everything in this directory, and sub-directories
+**/*
+
+# Except these files/directories
+!/.gitignore
+!/gpg.conf
+!/gpg-agent-linux.conf
+!/gpg-agent-macos.conf

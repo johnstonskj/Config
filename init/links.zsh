@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+# -*- mode: sh; eval: (sh-set-shell "zsh") -*-
 
 declare -A LINKMAP
 
