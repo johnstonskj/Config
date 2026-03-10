@@ -1,0 +1,27 @@
+#!/usr/bin/env zsh
+
+function wgit() {
+    local command="${1}"; shift
+    local -a args=( "${(z)*}" )
+
+    if ! git ${command} ${args[@]}; then
+        echo "Error running git command '${command}'; args: ${args[*]}"
+        exit 1
+    fi
+}
+
+function git_workflow() {
+    local plugin_name="${1}"
+    local merge_file="${plugin_name}.plugin.zsh"
+
+    EDITOR=vim
+
+    ${EDITOR} "${merge_file}"
+    wgit add "${merge_file}"
+}
+
+plugin="${1}"
+
+pushd "zsh-${plugin}-plugin" >/dev/null 2>&1
+git_workflow ${plugin}
+popd >/dev/null 2>&1

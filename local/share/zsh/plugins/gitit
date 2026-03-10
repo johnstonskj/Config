@@ -1,0 +1,124 @@
+#!/usr/bin/env zsh
+
+function is_true() {
+    local value="${1}"
+
+    if [[ "${value}" =~ (#i)(true|yes|1) ]]; then
+        return 0
+    else
+        return 1
+    fi
+}
+
+function wgit() {
+    local command="${1}"; shift
+    local -a args=( "${(z)*}" )
+
+    if ! git ${command} ${args[@]}; then
+        echo "Error running git command '${command}'; args: ${args[*]}"
+        exit 1
+    fi
+}
+
+function commit() {
+    local message="${*}"
+
+    if ! git commit -m "${message}"; then
+        echo "Error running git command 'commit'; message: ${message}"
+        exit 1
+    fi
+}
+
+function commit_all() {
+    wgit add --all
+    commit "$*"
+}
+
+function fix_detached_head() {
+    local and_push="$1"
+
+    wgit branch tmp
+    wgit checkout main
+    wgit merge tmp
+
+    if is_true ${and_push}; then
+        wgit push
+    fi
+}
+
+function git_workflow() {
+#    local plugin_dir="${1}"
+    local status_str="$(git status)"
+
+    if [[ "${status}" == (Your branch is up to date with 'origin/main') ]]; then
+        echo "'- Nothing to do"
+    elif [[ "${status_str}" =~ (Changes not staged for commit:|Untracked files:) ]]; then
+        echo "'- Adding, then committing files before continuing"
+        commit_all "chore: commit before fixing detached HEAD"
+    elif [[ "${status_str}" =~ (Changes to be committed:) ]]; then
+        echo "'- Committing files before continuing"
+        commit "chore: commit before fixing detached HEAD"
+    elif [[ "${status_str}" =~ (HEAD detached (at|from)) ]]; then
+        echo "'- Fixing detached HEAD"
+        fix_detached_head true
+    elif [[ "${status_str}" =~ (Your branch is ahead of 'origin/main') ]]; then
+        echo "'- Pushing changes"
+        wgit push
+    fi
+}
+
+ALL_PLUGINS=(
+    zsh-antigravity-plugin
+    zsh-bat-plugin
+    zsh-brew-plugin
+    zsh-cargo-plugin
+    zsh-completion-plugin
+    zsh-emacs-plugin
+    zsh-eza-plugin
+    zsh-fzf-plugin
+    zsh-getopt-plugin
+    zsh-gh-plugin
+    zsh-git-plugin
+    zsh-gnupg-plugin
+    zsh-gsed-plugin
+    zsh-guile-plugin
+    zsh-hd-plugin
+    zsh-history-plugin
+    zsh-intelli_shell-plugin
+    zsh-kiro-plugin
+    zsh-less-plugin
+    zsh-llvm-plugin
+    zsh-mcfly-plugin
+    zsh-myip-plugin
+    zsh-nix-plugin
+    zsh-openssh-plugin
+    zsh-orbstack-plugin
+    zsh-paths-plugin
+    zsh-racket-plugin
+    zsh-ruby-plugin
+    zsh-rust-plugin
+    zsh-rvm-plugin
+    zsh-shlog-plugin
+    zsh-starship-plugin
+    zsh-todo-plugin
+    zsh-vim-plugin
+    zsh-xcode-plugin
+    zsh-xdg-plugin
+    zsh-zoxide-plugin
+    zsh-zplugins-plugin
+)
+
+SKIP_PLUGINS=(
+    zsh-antigravity-plugin
+)
+
+for plugin in "${ALL_PLUGINS[@]}"; do
+    if (( SKIP_PLUGINS[(Ie)$plugin] )); then
+        echo "Skipping plugin ${plugin}"
+    else
+        echo "Processing plugin ${plugin}..."
+        pushd ${plugin} >/dev/null 2>&1
+        git_workflow ${plugin}
+        popd >/dev/null 2>&1
+    fi
+done
