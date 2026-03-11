@@ -11,8 +11,7 @@ export XXDG_LOCAL_ROOT=${HOME}/.local
 
 ZPLUGINS_PLUGIN_HOME=${XDG_DATA_HOME:-${HOME}/.local/share}/zsh/plugins
 source "${ZPLUGINS_PLUGIN_HOME}/zsh-zplugins-plugin/zplugins.plugin.zsh"
-
-@zplugins_load_bootstrap_plugins
+@zplugins_init
 
 ############################################################################
 # Start Here
