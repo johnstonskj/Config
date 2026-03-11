@@ -176,6 +176,18 @@ example_plugin_init
 true
 ```
 
+#### CLI functions
+
+`zps-config`
+
+`zps-doc`
+
+`zps-load`
+
+`zps-loaded`
+
+`zps-unload`
+
 ### Plugin xdg
 
 ### Plugin shlog
