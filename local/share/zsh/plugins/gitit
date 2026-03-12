@@ -109,7 +109,6 @@ ALL_PLUGINS=(
 )
 
 SKIP_PLUGINS=(
-    zsh-antigravity-plugin
 )
 
 for plugin in "${ALL_PLUGINS[@]}"; do
