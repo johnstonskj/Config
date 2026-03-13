@@ -1,9 +1,15 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
+# shellcheck shell=bash # -*- mode: sh; eval: (sh-set-shell "zsh") -*-
+
+builtin emulate -L zsh
+
+typeset -gi EC_SUCCESS
+typeset -gi EC_ARG_ERROR
 
 usage() {
     echo "Backup/Restore to home NAS"
     echo
-    echo "    Usage: $(basename $0) [OPTIONS] FOLDER"
+    echo "    Usage: ${0:t} [OPTIONS] FOLDER"
     echo
     echo "    -h | --help        Show this help."
     echo "    -r | --restore     Restore instead of backup."
@@ -14,17 +20,17 @@ usage() {
     echo "    -d | --dry-run     Do not perform actual copy actions."
 }
 
-OPT_VERBOSE=0
-OPT_RESTORE=0
-OPT_DRYRUN=0
-OPT_NAS_USER=simon
-OPT_NAS_HOST=JOHNAS1
-OPT_NAS_VOLUME_NAME=home
-OPT_NAS_BACKUP_DIR=Backup
-
-LOCAL_DIR=
+declare OPT_VERBOSE=0
+declare OPT_RESTORE=0
+declare OPT_DRYRUN=0
+declare OPT_NAS_USER=simon
+declare OPT_NAS_HOST=JOHNAS1
+declare OPT_NAS_VOLUME_NAME=home
+declare OPT_NAS_BACKUP_DIR=Backup
+declare LOCAL=
 
 parse_cmdline() {
+    # shellcheck disable=SC2155
     local options=$(getopt -o r,u:,n:,m:,b:,d,V,h -l restore,user:,mount-name:mount-path:,backup-dir:,dry-run,verbose,help -- "$@")
 
     eval set -- "$options"
@@ -34,7 +40,7 @@ parse_cmdline() {
         case "$1" in
         -h | --help)
             usage
-            exit 0
+            exit ${EC_SUCCESS}
             ;;
         -r | --restore)
             shift
@@ -72,13 +78,13 @@ parse_cmdline() {
     done
     if [[ -z "$1" ]] ; then
         echo "Need to give me a dir name"
-        exit 1
+        exit ${EC_ARG_ERROR}
     else
         export LOCAL=$1
     fi
 }
 
-parse_cmdline $@
+parse_cmdline "$@"
 
 if [[ "${LOCAL:0:1}" == \~ ]] ; then
     LOCAL=${LOCAL/#\~/$HOME}
@@ -90,7 +96,7 @@ fi
 
 if [[ ! -d $LOCAL ]] ; then
     echo "$DIR isn't a local dir"
-    exit 2
+    exit ${EC_ARG_ERROR}
 fi
 
 NAS_VOLUME=/Volumes/$OPT_NAS_VOLUME_NAME
@@ -99,10 +105,10 @@ NAS_BACKUP_DIR=$NAS_VOLUME/$OPT_NAS_BACKUP_DIR
 if [[ ! -d $NAS_VOLUME ]] ; then
     echo "No NAS mount, connect and re-run script"
     if [[ $OPT_DRYRUN -eq 1 ]] ; then
-        echo mount "afp://${OPT_NAS_USER}@${OPT_NAS_HOST}%28AFP%29._afpovertcp._tcp.local/$OPT_NAS_VOLUME_NAME" at $NAS_VOLUME
+        echo mount "afp://${OPT_NAS_USER}@${OPT_NAS_HOST}%28AFP%29._afpovertcp._tcp.local/$OPT_NAS_VOLUME_NAME" at "${NAS_VOLUME}"
     else
         open "afp://${OPT_NAS_USER}@${OPT_NAS_HOST}%28AFP%29._afpovertcp._tcp.local/$OPT_NAS_VOLUME_NAME"
-        exit 0
+        exit ${EC_SUCCESS}
     fi
 fi
 
@@ -111,17 +117,19 @@ if [[ $OPT_DRYRUN -eq 1 ]] ; then
     FLAGS="$FLAGS --dry-run"
 fi
 
-REMOTE=${LOCAL#"$HOME/"}
+REMOTE=${LOCAL#"${HOME}/"}
 REMOTE="${REMOTE%/}"    
-REMOTE=$(echo $REMOTE | tr '/' '-')
-REMOTE=$NAS_BACKUP_DIR/$REMOTE
+REMOTE="$(echo ${REMOTE} | tr '/' '-')"
+REMOTE="${NAS_BACKUP_DIR}/${REMOTE}"
 
 LOCAL="${LOCAL%/}/"
 
 if [[ $RESTORE == "yes" ]]; then
-    echo "restore $REMOTE to $LOCAL ($FLAGS)"
-    rsync $FLAGS $REMOTE $LOCAL
+    echo "restore ${REMOTE} to ${LOCAL} (${FLAGS})"
+    rsync "${FLAGS}" "${REMOTE}" "${LOCAL}"
 else
-    echo "backup $REMOTE to $LOCAL ($FLAGS)"
-    rsync $FLAGS $LOCAL $REMOTE
+    echo "backup ${REMOTE} to ${LOCAL} (${FLAGS})"
+    rsync "${FLAGS}" "${LOCAL}" "${REMOTE}"
 fi
+
+exit ${EC_SUCCESS}

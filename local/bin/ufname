@@ -1,11 +1,18 @@
 #!/usr/bin/env zsh
+# shellcheck shell=bash # -*- mode: sh; eval: (sh-set-shell "zsh") -*-
+
+builtin emulate -L zsh
+
+typeset -gi EC_SUCCESS
+typeset -gi EC_ARG_ERROR
 
 function uname_system_family() {
+    # shellcheck disable=SC2155
     local system="$(uname -s)"
 
     case "${system}" in
         AIX|DragonFly|FreeBSD|Haiku|Interix|MidnightBSD|Minix|NetBSD|OpenBSD|OS400|OSF1|QNX|SunOS|ULTRIX)
-            printf '%s' ${system:l} ;;
+            printf '%s' "${system:l}" ;;
         A/UX)
             printf 'aux' ;;
         CYGWIN*)
@@ -48,19 +55,20 @@ function uname_system_family() {
 }
 
 function uname_machine_family() {
+    # shellcheck disable=SC2155
     local machine="$(uname -m)"
 
     case "${machine}" in
         aarch64|arm64|ppc|ppc64|sparc64|x86_64)
-            printf '%s' ${machine:l} ;;
+            printf '%s' "${machine:l}" ;;
         armv[123456789]*)
-            printf '%s' ${machine::5} ;;
+            printf '%s' "${machine::5}" ;;
         CRAY\ Y-MP)
             printf 'cray_ymp' ;;
         i[36]86)
-            printf '%s' ${machine::4} ;;
+            printf '%s' "${machine::4}" ;;
         i686-64)
-            printf '%s' ${machine:gs/-/_} ;;
+            printf '%s' "${machine:gs/-/_}" ;;
         IP22|IP30|IP35)
             printf 'mips' ;;
         mc68030)
@@ -68,7 +76,7 @@ function uname_machine_family() {
         Pentium)
             printf 'i686' ;;
         riscv*)
-            printf '%s' ${machine} ;;
+            printf '%s' "${machine}" ;;
         VAX|vax-*)
             printf 'vax' ;;
         *)
@@ -80,20 +88,20 @@ while (( $# > 0 )); do
     case "${1}" in
         -s|--system)
             uname_system_family
-            exit 0
+            exit ${EC_SUCCESS}
             ;;
         -m|--machine)
             uname_machine_family
-            exit 0
+            exit ${EC_SUCCESS}
             ;;
         -a|--all)
             echo "$(uname_system_family)-$(uname_machine_family)"
-            exit 0
+            exit ${EC_SUCCESS}
             ;;
         -e|--export)
             echo "export SYSTEM_FAMILY=$(uname_system_family)"
             echo "export MACHINE_FAMILY=$(uname_machine_family)"
-            exit 0
+            exit ${EC_SUCCESS}
             ;;
         -h|--help)
             echo "muname [options]"
@@ -103,13 +111,13 @@ while (( $# > 0 )); do
             echo "    -s | --system    The system family"
             echo "    -e | --export    Export families as SYSTEM_FAMILY and MACHINE_FAMILY"
             echo "    -a | --all       The system and machine families"
-            exit 0
+            exit ${EC_SUCCESS}
             ;;
         *)
             echo "Unknown option '$1', try -h for help"
-            exit 1
+            exit ${EC_ARG_ERROR}
             ;;
     esac
-    shift
 done
 
+exit ${EC_SUCCESS}

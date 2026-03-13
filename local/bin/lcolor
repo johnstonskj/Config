@@ -1,5 +1,5 @@
 #! /usr/bin/env zsh
-# shellcheck shell=bash
+# shellcheck shell=bash # -*- mode: sh; eval: (sh-set-shell "zsh") -*-
 
 typeset -i col
 for col in {0..255}; do

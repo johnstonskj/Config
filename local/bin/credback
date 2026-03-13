@@ -1,12 +1,30 @@
-#!/usr/bin/env sh
+#!/usr/bin/env zsh
+# shellcheck shell=bash # -*- mode: sh; eval: (sh-set-shell "zsh") -*-
 
-ARCHIVE=credback-$(date "+%Y%m%d-%H%M%S").zip
+builtin emulate -L zsh
 
-zip -r $ARCHIVE \
-    $HOME/.gnupg \
-    $HOME/.ssh \
-    $HOME/.cargo/credentials \
-    $HOME/.config/emacs/secrets.el.gpg
+typeset -gi EC_SUCCESS
+typeset -gi EC_EXEC_ERROR
 
-gpg -se -r "Simon Johnston" -o $ARCHIVE.gpg $ARCHIVE
-rm $ARCHIVE
+ARCHIVE="credback-$(date "+%Y%m%d-%H%M%S").zip"
+
+if ! zip -r "${ARCHIVE}" \
+    "${HOME}/.gnupg" \
+    "${HOME}/.ssh" \
+    "${HOME}/.cargo/credentials" \
+    "${HOME}/.config/emacs/secrets.el.gpg"; then
+    echo "Error zip command failed; errno=$?"
+    return ${EC_EXEC_ERROR}
+fi
+
+if ! gpg -se -r "Simon Johnston" -o "${ARCHIVE}".gpg "${ARCHIVE}"; then
+    echo "Error gpg command failed; errno=$?"
+    return ${EC_EXEC_ERROR}
+fi
+
+if ! rm "${ARCHIVE}"; then
+    echo "Error rm command failed; errno=$?"
+    return ${EC_EXEC_ERROR}
+fi
+
+return ${EC_SUCCESS}
