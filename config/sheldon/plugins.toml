@@ -14,125 +14,14 @@ shell = "zsh"
 
 [plugins]
 
-# Bootstrap:
-
-[plugins.zplugins]
-local = "~/.local/share/zsh/plugins/zsh-zplugins-plugin"
-
-[plugins.xdg]
-local = "~/.local/share/zsh/plugins/zsh-xdg-plugin"
-
-[plugins.shlog]
-local = "~/.local/share/zsh/plugins/zsh-shlog-plugin"
-
-[plugins.paths]
-local = "~/.local/share/zsh/plugins/zsh-paths-plugin"
-
-[plugins.brew]
-local = "~/.local/share/zsh/plugins/zsh-brew-plugin"
-
-# The Rest:
-
-[plugins.bat]
-local = "~/.local/share/zsh/plugins/zsh-bat-plugin"
-
-[plugins.cargo]
-local = "~/.local/share/zsh/plugins/zsh-cargo-plugin"
-
-[plugins.my-completion]
-local = "~/.local/share/zsh/plugins/zsh-completion-plugin"
-
-[plugins.my-emacs]
-local = "~/.local/share/zsh/plugins/zsh-emacs-plugin"
-
-[plugins.eza]
-local = "~/.local/share/zsh/plugins/zsh-eza-plugin"
-
-[plugins.my-fzf]
-local = "~/.local/share/zsh/plugins/zsh-fzf-plugin"
-
-[plugins.getopt]
-local = "~/.local/share/zsh/plugins/zsh-getopt-plugin"
-
-[plugins.my-git]
-local = "~/.local/share/zsh/plugins/zsh-git-plugin"
-
-[plugins.gnupg]
-local = "~/.local/share/zsh/plugins/zsh-gnupg-plugin"
-
-[plugins.gsed]
-local = "~/.local/share/zsh/plugins/zsh-gsed-plugin"
-
-[plugins.guile]
-local = "~/.local/share/zsh/plugins/zsh-guile-plugin"
-
-[plugins.hd]
-local = "~/.local/share/zsh/plugins/zsh-hd-plugin"
-
-[plugins.history]
-local = "~/.local/share/zsh/plugins/zsh-history-plugin"
-
-[plugins.intelli-shell]
-local = "~/.local/share/zsh/plugins/zsh-intelli_shell-plugin"
-
-[plugins.kiro]
-local = "~/.local/share/zsh/plugins/zsh-kiro-plugin"
-
-[plugins.less]
-local = "~/.local/share/zsh/plugins/zsh-less-plugin"
-
-[plugins.llvm]
-local = "~/.local/share/zsh/plugins/zsh-llvm-plugin"
-
-[plugins.mcfly]
-local = "~/.local/share/zsh/plugins/zsh-mcfly-plugin"
-
-[plugins.myip]
-local = "~/.local/share/zsh/plugins/zsh-myip-plugin"
-
-[plugins.openssh]
-local = "~/.local/share/zsh/plugins/zsh-openssh-plugin"
-
-[plugins.orbstack]
-local = "~/.local/share/zsh/plugins/zsh-orbstack-plugin"
-
-[plugins.racket]
-local = "~/.local/share/zsh/plugins/zsh-racket-plugin"
-
-[plugins.ruby]
-local = "~/.local/share/zsh/plugins/zsh-ruby-plugin"
-
-[plugins.rust]
-local = "~/.local/share/zsh/plugins/zsh-rust-plugin"
-
-[plugins.rvm]
-local = "~/.local/share/zsh/plugins/zsh-rvm-plugin"
-
-[plugins.starship]
-local = "~/.local/share/zsh/plugins/zsh-starship-plugin"
-
-[plugins.todo]
-local = "~/.local/share/zsh/plugins/zsh-todo-plugin"
-
-[plugins.vim]
-local = "~/.local/share/zsh/plugins/zsh-vim-plugin"
-
-[plugins.xcode]
-local = "~/.local/share/zsh/plugins/zsh-xcode-plugin"
-
-[plugins.zoxide]
-local = "~/.local/share/zsh/plugins/zsh-zoxide-plugin"
-
-# Externals:
-
-[plugins.emacs]
-github = "Flinner/zsh-emacs"
-
 [plugins.fzf]
 github = "scaryrawr/fzf.zsh"
 
 [plugins.fzf-tab]
 github = "Aloxaf/fzf-tab"
+
+[plugins.zman]
+github = "mattmc3/zman"
 
 [plugins.functions]
 github = "mattmc3/zfunctions"

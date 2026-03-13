@@ -115,3 +115,9 @@
 [submodule "local/share/zsh/plugins/zsh-nix-plugin"]
 	path = local/share/zsh/plugins/zsh-nix-plugin
 	url = https://github.com/johnstonskj/zsh-nix-plugin
+[submodule "local/share/zsh/plugins/zsh-gcloud-plugin"]
+	path = local/share/zsh/plugins/zsh-gcloud-plugin
+	url = https://github.com/johnstonskj/zsh-gcloud-plugin
+[submodule "local/share/zsh/plugins/zsh-mise-plugin"]
+	path = local/share/zsh/plugins/zsh-mise-plugin
+	url = https://github.com/johnstonskj/zsh-mise-plugin

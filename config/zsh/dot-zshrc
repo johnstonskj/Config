@@ -25,7 +25,9 @@ zplugins=(
     emacs
     eza
     fzf
+    gcloud
     getopt
+    gh
     git
     gnupg
     gsed
@@ -37,6 +39,7 @@ zplugins=(
     less
     llvm
     mcfly
+    mise
     myip
     nix
     openssh
@@ -54,6 +57,8 @@ zplugins=(
 
 @zplugins_load_all
 
+eval "$(sheldon source)"
+
 log_scope_exit plugins
 
 ############################################################################
@@ -65,6 +70,8 @@ log_scope_enter prompt
 eval "$(zoxide init zsh)"
 
 eval "$(starship init zsh)"
+
+eval "$(fzf --zsh)"
 
 log_scope_exit prompt
 

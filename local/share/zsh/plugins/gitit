@@ -35,35 +35,38 @@ function commit_all() {
 }
 
 function fix_detached_head() {
-    local and_push="$1"
-
     wgit branch tmp
     wgit checkout main
     wgit merge tmp
-
-    if is_true ${and_push}; then
-        wgit push
-    fi
 }
 
 function git_workflow() {
 #    local plugin_dir="${1}"
     local status_str="$(git status)"
+    local and_push=no
 
     if [[ "${status}" == (Your branch is up to date with 'origin/main') ]]; then
         echo "'- Nothing to do"
-    elif [[ "${status_str}" =~ (Changes not staged for commit:|Untracked files:) ]]; then
-        echo "'- Adding, then committing files before continuing"
-        commit_all "chore: commit before fixing detached HEAD"
-    elif [[ "${status_str}" =~ (Changes to be committed:) ]]; then
-        echo "'- Committing files before continuing"
-        commit "chore: commit before fixing detached HEAD"
-    elif [[ "${status_str}" =~ (HEAD detached (at|from)) ]]; then
-        echo "'- Fixing detached HEAD"
-        fix_detached_head true
-    elif [[ "${status_str}" =~ (Your branch is ahead of 'origin/main') ]]; then
-        echo "'- Pushing changes"
-        wgit push
+    else
+        if [[ "${status_str}" =~ (Changes not staged for commit:|Untracked files:) ]]; then
+            echo "'- Adding, then committing files before continuing"
+            commit_all "${COMMIT_MSG}"
+            and_push=yes
+        fi
+        if [[ "${status_str}" =~ (Changes to be committed:) ]]; then
+            echo "'- Committing files before continuing"
+            commit "${COMMIT_MSG}"
+            and_push=yes
+        fi
+        if [[ "${status_str}" =~ (HEAD detached (at|from)) ]]; then
+            echo "'- Fixing detached HEAD"
+            fix_detached_head
+            and_push=yes
+        fi
+        if [[ "${status_str}" =~ (Your branch is ahead of 'origin/main') || ${and_push} == yes ]]; then
+            echo "'- Pushing changes"
+            wgit push
+        fi
     fi
 }
 
@@ -76,6 +79,7 @@ ALL_PLUGINS=(
     zsh-emacs-plugin
     zsh-eza-plugin
     zsh-fzf-plugin
+    zsh-gcloud-plugin
     zsh-getopt-plugin
     zsh-gh-plugin
     zsh-git-plugin
@@ -89,6 +93,7 @@ ALL_PLUGINS=(
     zsh-less-plugin
     zsh-llvm-plugin
     zsh-mcfly-plugin
+    zsh-mise-plugin
     zsh-myip-plugin
     zsh-nix-plugin
     zsh-openssh-plugin
@@ -110,6 +115,8 @@ ALL_PLUGINS=(
 
 SKIP_PLUGINS=(
 )
+
+COMMIT_MSG="feat: update completion, add docs"
 
 for plugin in "${ALL_PLUGINS[@]}"; do
     if (( SKIP_PLUGINS[(Ie)$plugin] )); then
