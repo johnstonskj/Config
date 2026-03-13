@@ -1,3 +1,0 @@
-#! /usr/bin/env zsh
-
-cargo udeps && cargo outdated && cargo audit
