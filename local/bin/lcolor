@@ -1,3 +1,10 @@
-#! /usr/bin/env sh
+#! /usr/bin/env zsh
+# shellcheck shell=bash
 
-for i in {0..255}; do  printf "\x1b[38;5;${i}mcolor%-5i\x1b[0m" $i ; if ! (( ($i + 1 ) % 8 )); then echo ; fi ; done
+typeset -i col
+for col in {0..255}; do
+    printf "\x1b[38;5;${col}mcolor%-5i\x1b[0m" $col
+    if ! (( ( col + 1 ) % 8 )); then
+        echo
+    fi
+done
