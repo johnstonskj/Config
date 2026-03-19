@@ -39,6 +39,8 @@ cask 'gitkraken-cli'
 cask 'gitfinder'
 cask 'gitbutler'
 
+brew gitu
+
 brew 'gitoxide'                         # Idiomatic, lean, fast & safe pure Rust implementation of Git
 
 brew 'gh'                               # Github command-line interface
