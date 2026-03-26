@@ -33,6 +33,5 @@ brew 'pass-otp'                         # Pass extension for managing one-time-p
 
 # ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Vaults ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
 
-brew tap hashicorp/tap
-
-brew install hashicorp/tap/vault
+tap 'hashicorp/tap'
+brew 'hashicorp/tap/vault'

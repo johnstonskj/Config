@@ -12,3 +12,5 @@ brew 'sheldon'                          # Fast, configurable, shell plugin manag
 brew 'intelli-shell'                    # Like IntelliSense, but for shells
 
 brew 'gnu-getopt'                       # For better argument parsing in shell scripts
+
+brew 'mcfly'                            # Fly through your shell history

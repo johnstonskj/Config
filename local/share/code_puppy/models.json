@@ -1,0 +1,131 @@
+{
+  "claude-4-6-sonnet": {
+    "name": "claude-sonnet-4-6",
+    "type": "custom_anthropic",
+    "custom_endpoint": {
+      "url": "https://puppy-backend.walmart.com/anthropic",
+      "api_key": "$puppy_token",
+      "headers": {
+        "X-Api-Key": "$puppy_token"
+      }
+    },
+    "context_length": 200000
+  },
+  "claude-4-6-opus": {
+    "name": "claude-opus-4-6",
+    "type": "custom_anthropic",
+    "custom_endpoint": {
+      "url": "https://puppy-backend.walmart.com/anthropic",
+      "api_key": "$puppy_token",
+      "headers": {
+        "X-Api-Key": "$puppy_token"
+      }
+    },
+    "context_length": 200000
+  },
+  "gemini-3-pro-preview": {
+    "name": "gemini-3-pro-preview",
+    "type": "custom_gemini",
+    "custom_endpoint": {
+      "url": "https://puppy-backend.stg.walmart.com/gemini",
+      "api_key": "$puppy_token",
+      "headers": {
+        "X-Goog-Api-Key": "$puppy_token"
+      }
+    },
+    "context_length": 200000
+  },
+  "gemini-3-pro-preview-long": {
+    "name": "gemini-3-pro-preview",
+    "type": "custom_gemini",
+    "custom_endpoint": {
+      "url": "https://puppy-backend.stg.walmart.com/gemini",
+      "api_key": "$puppy_token",
+      "headers": {
+        "X-Goog-Api-Key": "$puppy_token"
+      }
+    },
+    "context_length": 1000000
+  },
+  "gpt-5.1": {
+    "name": "gpt-5.1",
+    "type": "custom_openai",
+    "custom_endpoint": {
+      "url": "https://puppy-backend.stg.walmart.com",
+      "headers": {
+        "X-Api-Key": "$puppy_token"
+      }
+    },
+    "context_length": 272000
+  },
+  "gemini-3.1-pro-preview": {
+    "name": "gemini-3.1-pro",
+    "type": "custom_gemini",
+    "custom_endpoint": {
+      "url": "https://puppy-backend.stg.walmart.com/gemini",
+      "api_key": "$puppy_token",
+      "headers": {
+        "X-Goog-Api-Key": "$puppy_token"
+      }
+    },
+    "context_length": 200000
+  },
+  "gemini-3.1-pro-preview-long": {
+    "name": "gemini-3.1-pro",
+    "type": "custom_gemini",
+    "custom_endpoint": {
+      "url": "https://puppy-backend.stg.walmart.com/gemini",
+      "api_key": "$puppy_token",
+      "headers": {
+        "X-Goog-Api-Key": "$puppy_token"
+      }
+    },
+    "context_length": 1000000
+  },
+  "gpt-5.4": {
+    "name": "gpt-5.4",
+    "type": "custom_openai",
+    "custom_endpoint": {
+      "url": "https://puppy-backend.stg.walmart.com",
+      "headers": {
+        "X-Api-Key": "$puppy_token"
+      }
+    },
+    "context_length": 272000
+  },
+  "claude-4-5-sonnet": {
+    "name": "claude-sonnet-4-5",
+    "type": "custom_anthropic",
+    "custom_endpoint": {
+      "url": "https://puppy-backend.walmart.com/anthropic",
+      "api_key": "$puppy_token",
+      "headers": {
+        "X-Api-Key": "$puppy_token"
+      }
+    },
+    "context_length": 200000
+  },
+  "claude-4-5-haiku": {
+    "name": "claude-haiku-4-5",
+    "type": "custom_anthropic",
+    "custom_endpoint": {
+      "url": "https://puppy-backend.walmart.com/anthropic",
+      "api_key": "$puppy_token",
+      "headers": {
+        "X-Api-Key": "$puppy_token"
+      }
+    },
+    "context_length": 200000
+  },
+  "gpt-5.2": {
+    "name": "gpt-5.2",
+    "type": "custom_openai",
+    "custom_endpoint": {
+      "url": "https://puppy-backend.walmart.com",
+      "headers": {
+        "X-Api-Key": "$puppy_token"
+      }
+    },
+    "context_length": 272000
+  }
+}

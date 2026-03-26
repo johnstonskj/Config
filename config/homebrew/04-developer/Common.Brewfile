@@ -33,19 +33,19 @@ brew 'commitlint'
 brew 'multi-git-status'
 brew 'gitlint'
 brew 'gitwatch'
-brew 'fswatch'
-brew 'tig'
 cask 'gitkraken-cli'
 cask 'gitfinder'
 cask 'gitbutler'
 
-brew gitu
+brew 'tig'
+brew 'gitu'                             # TUI for Git based on Magit
+brew 'lazygit'                          # TUI for Git
 
 brew 'gitoxide'                         # Idiomatic, lean, fast & safe pure Rust implementation of Git
 
 brew 'gh'                               # Github command-line interface
 brew 'github-mcp-server'
-mas'  Clone in VS Code', id: 1508732804 # Safari extension, clone from forge to vscode
+mas  'Clone in VS Code', id: 1508732804 # Safari extension, clone from forge to vscode
 
 # ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Documentation ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
 

@@ -1,0 +1,6 @@
+owner: github
+name: gh-copilot
+host: github.com
+tag: v1.2.0
+ispinned: false
+path: /Users/s0j0g7m/.local/share/gh/extensions/gh-copilot/gh-copilot

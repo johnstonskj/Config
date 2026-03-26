@@ -5,7 +5,11 @@
 
 cask 'console'                          # A better console tool
 
+brew 'terminal-notify'                  # Send macOS User Notifications from the command-line
+
 mas 'Screens 5: VNC Remote Desktop', id: 1663047912
+
+brew 'sniffnet'                         # Cross-platform application to monitor your network traffic
 
 include './Sync.Brewfile', optional: false
 

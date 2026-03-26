@@ -17,6 +17,7 @@ brew 'v8'                               # V8 JavaScript Engine
 # ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Lisp-Like ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
 
 brew 'clisp'                            # GNU CLISP, a Common Lisp implementation
+brew 'sbcl'                             # Steel Bank Common Lisp system
 
 brew 'guile'                            # GNU Ubiquitous Intelligent Language for Extensions
 brew 'guile-fibers'
@@ -24,7 +25,7 @@ brew 'guile-gnutls'
 
 cask 'racket'                           # Modern programming language in the Lisp/Scheme family
 
-mas 'LispPad', id: 1258939760           # Another Mac-specific Scheme
+mas  'LispPad', id: 1258939760          # Another Mac-specific Scheme
 
 brew 'chezscheme'
 # brew 'chibi-scheme'
@@ -34,6 +35,9 @@ brew 'chezscheme'
 # brew 'sagittarius-scheme'
 # brew 'scheme48'
 # brew 'sisc-scheme'
+
+# brew 'clojure'                        # Dynamic, general-purpose programming language
+# brew 'clojure-lsp'                    # Language Server (LSP) for Clojure
 
 # ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Pythonic ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
 

@@ -1,0 +1,65 @@
+capture_source_picklist = "Device"
+report_sort_type = "Neutral"
+host_sort_type = "Descending"
+service_sort_type = "Neutral"
+last_opened_setting = "Notifications"
+last_opened_page = "Inspect"
+import_pcap_path = ""
+data_repr = "Packets"
+
+[settings]
+color_gradient = "None"
+language = "EN"
+scale_factor = 1.0
+mmdb_country = ""
+mmdb_asn = ""
+style_path = ""
+
+[settings.notifications]
+volume = 60
+
+[settings.notifications.data_notification]
+data_repr = "Bytes"
+byte_multiple = "KB"
+sound = "Pop"
+previous_threshold = 800000
+
+[settings.notifications.favorite_notification]
+notify_on_favorite = false
+sound = "Swhoosh"
+
+[settings.notifications.remote_notifications]
+is_active = false
+url = ""
+
+[settings.style]
+style = "Custom"
+
+[settings.style.name]
+custom = "A11yDark"
+
+[device]
+device_name = "en0"
+
+[window]
+position = [
+    0.0,
+    30.0,
+]
+size = [
+    3440.0,
+    1377.0,
+]
+thumbnail_position = [
+    0.0,
+    0.0,
+]
+
+[filters]
+expanded = false
+bpf = ""
+
+[export_pcap]
+enabled = false
+file_name = "sniffnet.pcap"
+directory = "/Users/s0j0g7m"

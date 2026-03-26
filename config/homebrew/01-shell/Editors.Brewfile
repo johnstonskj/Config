@@ -14,3 +14,7 @@ brew 'eask-cli'                         # CLI for building, running, testing, an
 
 cask 'macvim-app'                       # GUI for vim, made for macOS
 brew 'neovim'                           # Ambitious Vim-fork focused on extensibility and agility
+
+# brew 'sublime-text'                   # Sublime Text
+# brew 'sublime-merge'                  # Sublime Merge
+# brew 'textmate'                       # General-purpose text editor

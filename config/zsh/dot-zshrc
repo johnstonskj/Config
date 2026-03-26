@@ -76,3 +76,14 @@ eval "$(fzf --zsh)"
 log_scope_exit prompt
 
 log_scope_exit zshrc
+
+# Added by Code Puppy installer on Tue Mar 24 07:52:06 PDT 2026
+alias code-puppy="$HOME/.code-puppy-venv/bin/code-puppy"
+
+
+# Added by Wibey CLI installation
+export PATH="/Users/s0j0g7m/.local/bin:$PATH"
+
+
+# Added by Wibey CLI installation
+export BUN_INSTALL_CACHE_DIR="/Users/s0j0g7m/.local/share/bun/cache"

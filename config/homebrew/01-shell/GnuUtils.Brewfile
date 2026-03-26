@@ -18,6 +18,8 @@ brew 'inetutils'
 brew 'watch'
 brew 'wdiff'
 
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Programming Tools ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
 # Core GNU programming tools
 brew 'gdb'                              # gdb requires further actions to make it work. See `brew info gdb`.
 brew 'gpatch'
