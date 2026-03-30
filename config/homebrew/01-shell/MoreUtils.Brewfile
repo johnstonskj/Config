@@ -28,6 +28,7 @@ brew 'jnv'                              # Interactive JSON filter using jq
 brew 'sd'                               # Intuitive find & replace CLI
 cask 'tad'                              # Tad is CSV viewer with features for pivot, search, etc.
 brew 'yq'                               # yq is a lightweight and flexible command-line YAML processor
+brew 'brew install brevity1swos/tap/rgx'
 
 # ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Image Viewers/Tools ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
 

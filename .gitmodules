@@ -121,3 +121,9 @@
 [submodule "local/share/zsh/plugins/zsh-mise-plugin"]
 	path = local/share/zsh/plugins/zsh-mise-plugin
 	url = https://github.com/johnstonskj/zsh-mise-plugin
+[submodule "local/share/zsh/plugins/zsh-bun-plugin"]
+	path = local/share/zsh/plugins/zsh-bun-plugin
+	url = https://github.com/johnstonskj/zsh-bun-plugin
+[submodule "local/share/zsh/plugins/zsh-code_puppy-plugin"]
+	path = local/share/zsh/plugins/zsh-code_puppy-plugin
+	url = https://github.com/johnstonskj/zsh-code_puppy-plugin
