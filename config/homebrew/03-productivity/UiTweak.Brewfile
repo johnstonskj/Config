@@ -2,6 +2,8 @@
 # │ Layer 03 ❱ Productivity ❱ UI Tweaks (Widgets, Menubar)
 # └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
+mas  'Launchie App Launchpad', id: 6752657468
+
 mas  'Pieoneer', id: 6739781207         # Fancy context-sensitive pie menus
 
 mas  'Dropover - Easier Drag & Drop', id: 1355679052
