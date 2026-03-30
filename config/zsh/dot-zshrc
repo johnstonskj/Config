@@ -2,6 +2,9 @@
 
 log_scope_enter zshrc
 
+# Uncomment the following to load the zsh profiler
+# zmodload zsh/zprof
+
 ############################################################################
 # Core/Standard Environment Variables
 ############################################################################
@@ -21,7 +24,10 @@ log_scope_enter plugins
 zplugins=(
     bat
     brew
-    cargo completion
+    bun
+    cargo
+    code_puppy
+    completion
     emacs
     eza
     fzf
@@ -75,15 +81,11 @@ eval "$(fzf --zsh)"
 
 log_scope_exit prompt
 
+############################################################################
+# Done
+############################################################################
+
+# Uncomment to start profiling
+# zprof
+
 log_scope_exit zshrc
-
-# Added by Code Puppy installer on Tue Mar 24 07:52:06 PDT 2026
-alias code-puppy="$HOME/.code-puppy-venv/bin/code-puppy"
-
-
-# Added by Wibey CLI installation
-export PATH="/Users/s0j0g7m/.local/bin:$PATH"
-
-
-# Added by Wibey CLI installation
-export BUN_INSTALL_CACHE_DIR="/Users/s0j0g7m/.local/share/bun/cache"
