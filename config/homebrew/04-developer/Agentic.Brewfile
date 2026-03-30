@@ -2,10 +2,10 @@
 # │ Layer 04 ❱ Development Tools ❱ Agentic
 # └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Aider-AI:
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ General Tools:
 
-# brew 'aider'                            # AI pair programming in your terminal
-# cask 'hotovo-aider-desk'                # Desktop app for aider assistant
+brew 'toktop'                           # LLM usage monitor in terminal
+
 
 # ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Anthropic Claude:
 
@@ -25,7 +25,7 @@ brew 'gemini-cli'                       # Interact with Google Gemini AI models 
 # ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ OpenAI Codex:
 
 cask 'codex'                            # OpenAI's coding agent that runs in your terminal
-vscode 'openai.chatgpt'                 # 
+vscode 'openai.chatgpt'                 #
 
 # ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ OpenCode:
 
