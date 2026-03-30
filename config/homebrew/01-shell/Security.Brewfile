@@ -31,6 +31,8 @@ brew 'pass'                             # Pass, a Unix password manager for the 
 brew 'pass-git-helper'                  # Git credential helper interfacing with pass
 brew 'pass-otp'                         # Pass extension for managing one-time-password tokens
 
+# cargo install passepartui
+
 # ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Vaults ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
 
 tap 'hashicorp/tap'
