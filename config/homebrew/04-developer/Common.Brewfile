@@ -61,4 +61,6 @@ brew 'tokei'                            # Source code line counter
 
 cask 'xquartz'                          # Xquartz X.Org X Window System that runs on OS X
 
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Secrets ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
 
+brew 'fnox'                             # Fort Knox for your secrets - flexible secret management tool
