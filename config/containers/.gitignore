@@ -1,0 +1,7 @@
+# Ignore everything in this directory, and sub-directories
+**/*
+
+# Except these files/directories
+containers.conf
+
+!.gitignore

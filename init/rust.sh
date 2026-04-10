@@ -1,14 +1,18 @@
 #!/usr/bin/env bash
 # -*- mode: sh; eval: (sh-set-shell "bash") -*-
 
-declare -a TOOLCHAINS=(
-	stable
-)
+rustup  toolchain \
+		install stable \
+		--component rust-src \
+		--component clippy-preview
 
-declare -a COMPONENTS=(
-	rust-src
-	clippy-preview
-)
+rustup  toolchain \
+		install nightly \
+		--component rustc-dev \
+		--component rust-src \
+		--component llvm-tools
+
+cargo default stable
 
 declare -a COMMANDS=(
 	cargo-info
@@ -19,14 +23,6 @@ declare -a COMMANDS=(
 	nu-lint
 	release-plz
 )
-
-for toolchain in "${TOOLCHAINS[@]}"; do
-	rustup toolchain add "${toolchain}"
-done
-
-for component in "${COMPONENTS[@]}"; do
-	rustup component add "${component}"
-done
 
 for command in "${COMMANDS[@]}"; do
 	cargo install --locked "${command}"

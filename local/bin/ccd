@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+
+# Always run from the repo root so relative paths in config work
+
+declare root
+root="$(git rev-parse --show-toplevel 2>/dev/null)" || root="$PWD"
+
+cd "$root" || return
+
+claude "$@"
