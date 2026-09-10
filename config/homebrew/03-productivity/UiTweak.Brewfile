@@ -4,7 +4,7 @@
 
 cask 'launchos'                         # Launchpad alternative
 
-mas  'Pieoneer', id: 6739781207         # Fancy context-sensitive pie menus
+# mas  'Pieoneer', id: 6739781207         # Fancy context-sensitive pie menus
 
 mas  'Dropover - Easier Drag & Drop', id: 1355679052
 

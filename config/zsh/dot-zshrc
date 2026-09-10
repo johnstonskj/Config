@@ -89,3 +89,12 @@ log_scope_exit prompt
 # zprof
 
 log_scope_exit zshrc
+
+#sledge:binary path
+export SLEDGE_BIN=/Users/s0j0g7m/.sledge/bin
+export PATH="${PATH}:${SLEDGE_BIN}"
+
+# Added by Wibey CLI installation
+export BUN_INSTALL_CACHE_DIR="/Users/s0j0g7m/.local/share/bun/cache"
+
+alias dipshit='uvx code-puppy'

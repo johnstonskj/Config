@@ -1,0 +1,4 @@
+[tools]
+mdbook = "latest"
+markdownlint-cli2 = "latest"
+# mdbook-linkcheck = "latest"

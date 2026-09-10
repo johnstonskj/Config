@@ -27,13 +27,13 @@ cask 'google-drive'                     # Google Drive client for Mac
 cask 'proton-drive', adopt: true        # Proton suite of privacy-focused apps
 cask 'proton-mail', adopt: true
 
-# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Other ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Other Writing ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
 
 cask 'pdf-expert', adopt: true          # PDF reader, editor and annotator
 
-cask 'texifier'                         # Damn fine LaTeX editor
+# cask 'texifier'                       # Damn fine LaTeX editor
 
-cask 'obsidian', adopt: true            # Knowledge base that works on local Markdown files
+# cask 'obsidian', adopt: true          # Knowledge base that works on local Markdown files
 
 cask 'raindropio', adopt: true          # All-in-one bookmark manager and publisher
 
@@ -41,10 +41,16 @@ cask 'zotero@beta'                      # Collect, organize, cite, and share res
 
 cask 'omnigraffle', adopt: true         # Diagramming
 
-mas  'Soulver 3', id: 1508732804        # Fancy-ass calculator, converter and more
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Other Tools ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
+cask 'soulver', adopt: true             # Notepad with a built-in calculator
+cask 'soulver-cli'                      # Standalone cli for the Soulver calculation engine
+
 mas  'MathStudio', id: 829912893        # Simple CAS for Mac
+
+# ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Agents ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
 
 cask 'claude', adopt: true              # Anthropic's official Claude AI desktop app
 
-# TODO: cask 'eigent'                           # AI workforce on desktop automates your operations in any scenarios
+# TODO: cask 'eigent'                   # AI workforce on desktop automates your operations in any scenarios
 

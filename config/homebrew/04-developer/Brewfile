@@ -15,3 +15,5 @@ include './Agentic.Brewfile', optional: false
 
 include './Database.Brewfile', optional: false
 
+include './Cloud.Brewfile', optional: false
+

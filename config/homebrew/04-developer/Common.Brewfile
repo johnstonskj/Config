@@ -9,6 +9,8 @@ brew 'dotenv-linter'                    # Lightning-fast linter for .env files w
 
 brew 'mise'                             # Polyglot runtime manager
 
+`mise install`                          # All global and user settings
+
 # ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Build coördination tools ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
 
 brew 'cmake'                            # Cross-platform make
@@ -47,9 +49,10 @@ brew 'gh'                               # Github command-line interface
 brew 'github-mcp-server'
 mas  'Clone in VS Code', id: 1508732804 # Safari extension, clone from forge to vscode
 
+cask 'gitkraken'                        # Git client focusing on productivity
+
 # ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Documentation ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
 
-brew 'mdbook'                           # Create online books from Markdown
 brew 'plantuml'                         # Draw UML diagrams from text
 
 # ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Code Statistics ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯

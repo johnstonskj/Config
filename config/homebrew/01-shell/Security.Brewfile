@@ -23,6 +23,7 @@ brew 'pinentry-mac'                     # Pinentry for GPG on Mac
 brew 'gpg-tui'                          # Manage your GnuPG keys with ease!
 cask 'gpgfrontend'                      # OpenPGP/GnuPG crypto, sign and key management tool
 cask 'gpg-suite'                        # Tools to protect your emails and files
+
 # cask 'gpg-suite-pinentry'             # GPG Suite Pinentry
 
 # ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Pass ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
@@ -36,4 +37,6 @@ brew 'pass-otp'                         # Pass extension for managing one-time-p
 # ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Vaults ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
 
 tap 'hashicorp/tap'
+`brew trust hashicorp/tap`
+
 brew 'hashicorp/tap/vault'

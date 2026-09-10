@@ -9,10 +9,12 @@ brew 'llvm'                             # LLVM compiler
 
 # ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ JavaScript/TypeScript/Json ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
 
-brew 'jsonlint'
 brew 'node'                             # Node.js is a JavaScript platform for building fast, scalable network app.
-brew 'nvm'
+brew 'nvm'                              # Manage multiple Node.js versions
 brew 'v8'                               # V8 JavaScript Engine
+brew 'bun'                              # Incredibly fast JavaScript runtime, bundler, test runner, and package manager
+
+brew 'jsonlint'
 
 # ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Lisp-Like ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
 
@@ -49,8 +51,6 @@ brew 'uv'
 
 brew 'rustup'                           # Toolchain/environment management
 
-brew 'rust-analyzer'                    # LSP server for Rust
-
 # Cargo commands
 brew 'cargo-audit'
 brew 'cargo-binstall'
@@ -66,6 +66,8 @@ brew 'cargo-outdated'
 brew 'cargo-shear'
 brew 'cargo-udeps'
 brew 'cargo-update'
+brew 'cargo-tarpaulin'
+brew 'cargo-watch'
 
 # ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ OCaml ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
 
@@ -88,14 +90,11 @@ brew 'rocq'                             # Coq proof assistant for higher-order l
 brew 'rocq-elpi'
 
 brew 'ruby'                             # Ruby programming language; compare `perl`, `python`
+brew 'rv'                               # Ruby version manager
 # no installer for https://rvm.io/rvm/install
 
 brew 'shellcheck'                       # Shell script syntax check linter
 
-# brew 'gnu-smalltalk'
-
 brew 'sql-lint'
 
 brew 'yamllint'                         # YAML lint validator
-
-
