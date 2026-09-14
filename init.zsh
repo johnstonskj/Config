@@ -94,16 +94,6 @@ popd
 
 popd
 
-if [[ "${USE_NIX}" =~ (#i)(true|yes|1) ]]; then
-    if ! command - v nix; then
-        echo "Info: installing nix command"
-        if ! curl -L https://nixos.org/nix/install | sh; then
-            echo "Error: could not install nix from nixos.org"
-            exit ${ERR_INSTALLER_FAIL}
-        fi
-    fi
-fi
-
 if [[ -f ./init/init-links.zsh ]]; then
     echo "Info: initializing links"
 fi
