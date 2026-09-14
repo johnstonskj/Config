@@ -1,0 +1,5 @@
+; -*- mode: emacs-lisp; lexical-binding: t; -*-
+
+; This file is for eldev startup configuration.
+
+(setf eldev-coloring-mode t)
