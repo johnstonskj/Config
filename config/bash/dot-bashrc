@@ -1,3 +1,0 @@
-# -*- mode: sh; eval: (sh-set-shell "bash") -*-
-
-[[ "${TERM_PROGRAM}" == "kiro" ]] && . "$(kiro --locate-shell-integration-path bash)"
