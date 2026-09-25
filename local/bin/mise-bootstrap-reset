@@ -1,0 +1,84 @@
+#!/usr/bin/env zsh
+
+export MISE_CONFIG_DIR="${HOME}/.mise"
+
+MYMISE_CLEAN=0
+MYMISE_INSTALL=0
+MYMISE_ADOPT=0
+MYMISE_ADOPT_REPO="johnstonskj/mise-config"
+MYMISE_GHLOGIN=0
+MYMISE_AUTOSAVE=0
+
+for arg in "$@"; do
+    case $arg in
+        --no-clean)
+            MYMISE_NOCLEAN=1
+            shift
+            ;;
+        --no-install)
+            MYMISE_INSTALL=1
+            shift
+            ;;
+        --no-adopt)
+            MYMISE_ADOPT=1
+            shift
+            ;;
+        --no-gh-login)
+            MYMISE_GHLOGIN=1
+            shift
+            ;;
+        --no-autosave)
+            MYMISE_AUTOSAVE=1
+            shift
+            ;;
+        --verbose)
+            MISE_VERBOSE=1
+            shift
+            ;;
+        *)
+            echo "Unknown option: $arg"
+            exit 1
+            ;;
+    esac
+done
+
+if [[ ${MYMISE_NOCLEAN} -eq 0 ]]; then
+    echo "Removing existing configuration and state"
+
+    rm -rf "${MISE_CONFIG_DIR}"
+    rm -rf "${XDG_CONFIG_HOME}/mise"
+    rm -rf "${XDG_DATA_HOME}/mise"
+    rm -rf "${XDG_STATE_HOME}/mise"
+
+    rm -f "${HOME}/.local/bin/mise"
+fi
+
+if [[ ${MYMISE_INSTALL} -eq 0 ]]; then
+    echo "Installing mise from source"
+
+    curl 'https://mise.run' | sh
+    export PATH="$HOME/.local/bin:$PATH"
+fi
+
+if [[ ${MYMISE_ADOPT} -eq 0 ]]; then
+    echo "Adopting config from ${MYMISE_ADOPT_REPO}"
+
+    mise use -g gh
+
+    if [[ ${MYMISE_GHLOGIN} -eq 0 ]]; then
+        echo "Logging into GitHub"
+        mise x gh -- gh auth login --hostname github.com --git-protocol https --web
+    fi
+
+    mise x gh -- gh auth setup-git --hostname github.com
+
+    mise ${MYMISE_VERBOSE} bootstrap --adopt ${MYMISE_ADOPT_REPO}
+fi
+
+if [[ ${MYMISE_AUTOSAVE} -eq 0 ]]; then
+    echo "Enable history sync"
+
+    mise settings set history.sync sync
+    mise bootstrap services apply
+    mise dotfiles status
+fi
